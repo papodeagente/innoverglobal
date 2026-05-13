@@ -145,7 +145,7 @@ function HomePage() {
               {t("cta.btn")} <ArrowRight className="w-4 h-4" />
             </a>
             <div className="mt-12 flex justify-center">
-              <Seal className="text-white border-white/40" />
+              <Seal variant="white" />
             </div>
           </FadeIn>
         </div>

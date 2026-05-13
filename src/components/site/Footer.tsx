@@ -76,7 +76,7 @@ export function Footer() {
             {/* TODO: inserir CNPJ real */}
             <div>CNPJ: 00.000.000/0001-00 · © {new Date().getFullYear()} · {t("footer.rights")}</div>
           </div>
-          <Seal className="opacity-80 [&]:text-white [&]:border-white/40" />
+          <Seal variant="white" className="opacity-90" />
         </div>
       </div>
 
