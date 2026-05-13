@@ -29,7 +29,7 @@ function SobrePage() {
       <RouteLine label="ROTA · NATAL → MUNDO" />
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mt-12">
-        <FadeIn className="lg:col-span-5">
+        <FadeIn className="lg:col-span-4">
           <div className="aspect-[4/5] bg-mist relative overflow-hidden">
             <img
               src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&auto=format&fit=crop"
@@ -44,26 +44,27 @@ function SobrePage() {
           </div>
         </FadeIn>
 
-        <FadeIn delay={150} className="lg:col-span-7 relative">
-          {/* TODO: substituir texto por versão final aprovada pela Grace */}
-          <div className="space-y-5 text-ink/85 leading-[1.8] text-[17px]">
-            <p>A Innover nasceu da percepção de que pequenas empresas brasileiras com produto de qualidade muitas vezes ficam fora do mercado internacional não por falta de capacidade — mas por falta de informação técnica.</p>
-            <p>Importar e exportar exige domínio de regras aduaneiras, classificação fiscal, certificações sanitárias e adequação cultural a cada mercado. Coisas que nenhum empreendedor precisa fazer sozinho, e que poucas consultorias se dispõem a explicar sem jargão.</p>
-            <p>Nossa proposta é simples: tirar o comércio exterior do plano abstrato e transformar em um conjunto de etapas claras. Acompanhamos cada cliente da primeira pergunta — "meu produto pode ser exportado?" — até o despacho aduaneiro efetivo.</p>
-            <p>Atendemos empresas de todo o Brasil, com foco especial no setor de alimentos e bebidas, onde a expertise sanitária e regulatória é mais densa.</p>
-          </div>
-
-          {/* documento decorativo */}
-          <div className="hidden lg:block absolute -right-6 -top-6 w-[260px] bg-white border border-line shadow-xl p-5 stamp">
-            <div className="label-mono">CERTIFICADO DE ORIGEM</div>
-            <div className="mt-3 space-y-1 font-mono text-[10px] uppercase text-mute leading-relaxed">
-              <div>No. INV-2025-001</div>
-              <div>Origem: BRASIL</div>
-              <div>Destino: [VARIADO]</div>
-              <div>Emissor: INNOVER NEGÓCIOS INT.</div>
+        <FadeIn delay={150} className="lg:col-span-8">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-10 lg:gap-20">
+            <div className="relative z-[2] space-y-5 text-ink/85 leading-[1.8] text-[17px]">
+              <p>A Innover nasceu da percepção de que pequenas empresas brasileiras com produto de qualidade muitas vezes ficam fora do mercado internacional. Não por falta de capacidade, mas por falta de informação técnica.</p>
+              <p>Importar e exportar exige domínio de regras aduaneiras, classificação fiscal, certificações sanitárias e adequação cultural a cada mercado. São assuntos que nenhum empreendedor precisa enfrentar sozinho, e que poucas consultorias se dispõem a explicar sem jargão.</p>
+              <p>Nossa proposta é simples: tirar o comércio exterior do plano abstrato e transformar em um conjunto de etapas claras. Acompanhamos cada cliente desde a primeira pergunta ('meu produto pode ser exportado?') até o despacho aduaneiro efetivo.</p>
+              <p>Atendemos empresas de todo o Brasil, com foco especial no setor de alimentos e bebidas, onde a expertise sanitária e regulatória é mais densa.</p>
             </div>
-            <div className="mt-4 h-px bg-line" />
-            <div className="mt-4 flex justify-end"><Seal className="scale-75 origin-bottom-right" /></div>
+
+            {/* documento decorativo */}
+            <div className="relative z-[1] justify-self-center lg:justify-self-end w-full max-w-[320px] lg:max-w-none lg:w-[360px] lg:self-start lg:sticky lg:top-[120px] bg-white border border-line shadow-xl p-5 stamp">
+              <div className="label-mono">CERTIFICADO DE ORIGEM</div>
+              <div className="mt-3 space-y-1 font-mono text-[10px] uppercase text-mute leading-relaxed">
+                <div>No. INV-2025-001</div>
+                <div>Origem: BRASIL</div>
+                <div>Destino: [VARIADO]</div>
+                <div>Emissor: INNOVER NEGÓCIOS INT.</div>
+              </div>
+              <div className="mt-4 h-px bg-line" />
+              <div className="mt-4 flex justify-end"><Seal className="scale-75 origin-bottom-right" /></div>
+            </div>
           </div>
         </FadeIn>
       </div>
