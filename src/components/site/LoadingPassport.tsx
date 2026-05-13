@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import logoFull from "@/assets/innover-logo-full.png";
 
 /** Loading screen: animação de "passaporte sendo carimbado" */
 export function LoadingPassport() {
@@ -29,8 +30,9 @@ export function LoadingPassport() {
     >
       <div className="relative">
         {/* "passaporte" */}
-        <div className="w-[260px] h-[180px] border border-line bg-mist relative overflow-hidden">
+        <div className="w-[300px] h-[200px] border border-line bg-mist relative overflow-hidden flex items-center justify-center">
           <div className="absolute top-3 left-3 label-mono">PASSPORT · INNOVER</div>
+          <img src={logoFull} alt="Innover" className="w-[210px] h-auto" />
           <div className="absolute bottom-3 left-3 right-3 h-px bg-navy/20" />
           <div className="absolute bottom-6 left-3 label-mono">NATAL/RN/BR</div>
         </div>

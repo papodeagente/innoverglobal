@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { useI18n } from "@/lib/i18n";
 import { Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import { Seal } from "./Seal";
+import logoMark from "@/assets/innover-mark.png";
 
 export function Footer() {
   const { t } = useI18n();
@@ -17,8 +18,18 @@ export function Footer() {
       <div className="max-w-[1280px] mx-auto px-6 lg:px-10 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           <div className="md:col-span-2">
-            <div className="font-display font-bold text-3xl text-white">Innover</div>
-            <div className="label-mono mt-2 text-white/50">NEGÓCIOS INTERNACIONAIS</div>
+            <div className="flex items-center gap-4">
+              <img
+                src={logoMark}
+                alt="Innover"
+                className="h-14 w-auto"
+                style={{ filter: "brightness(0) invert(1)" }}
+              />
+              <div>
+                <div className="font-display font-bold text-3xl text-white leading-none">Innover</div>
+                <div className="label-mono mt-2 text-white/50">NEGÓCIOS INTERNACIONAIS</div>
+              </div>
+            </div>
             <p className="mt-6 text-sm text-white/60 max-w-md leading-relaxed">
               Consultoria especializada em comércio exterior para micro e pequenas empresas brasileiras.
               Foco em alimentos e bebidas, importação e exportação.
