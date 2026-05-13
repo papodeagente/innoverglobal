@@ -92,7 +92,7 @@ export function Header() {
       {open && (
         <div className="fixed inset-0 z-[60] bg-white animate-in fade-in duration-200">
           <div className="flex items-center justify-between p-6 border-b border-line">
-            <img src={logoMark} alt="Innover" className="h-9 w-auto" />
+            <img src={logoFull} alt="Innover Negócios Internacionais" className="h-9 w-auto" />
             <button onClick={() => setOpen(false)} aria-label="Close menu">
               <X className="w-6 h-6 text-navy" />
             </button>
