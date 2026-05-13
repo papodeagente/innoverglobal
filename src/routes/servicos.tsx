@@ -103,8 +103,8 @@ function ServicosPage() {
               </SheetHeader>
               <div className="mt-6 -mx-2"><WorldMap variant={openService.variant} /></div>
               <p className="mt-6 text-ink/85 leading-relaxed">{openService.long}</p>
-              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-primary mt-8 inline-flex items-center gap-2 px-5 py-3 text-sm font-medium">
-                Conversar sobre este serviço <ArrowRight className="w-4 h-4" />
+              <a href={`https://wa.me/5584996051655?text=${encodeURIComponent(openService.whatsappMessage)}`} target="_blank" rel="noopener noreferrer" className="btn-primary mt-8 inline-flex items-center gap-2 px-5 py-3 text-sm font-medium">
+                Falar pelo WhatsApp <ArrowRight className="w-4 h-4" />
               </a>
             </>
           )}
