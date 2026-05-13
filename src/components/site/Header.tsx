@@ -43,7 +43,7 @@ export function Header() {
       >
         <div className="max-w-[1280px] mx-auto px-6 lg:px-10 h-[72px] flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3 group" aria-label="Innover Negócios Internacionais">
-            <img src={logoFull} alt="Innover Negócios Internacionais" className="h-9 lg:h-10 w-auto" />
+            <img src={logoMark} alt="Innover" className="h-10 lg:h-12 w-auto" />
             <span className="label-mono hidden xl:inline">/ COMEX</span>
           </Link>
 
