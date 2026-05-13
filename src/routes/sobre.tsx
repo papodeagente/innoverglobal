@@ -29,7 +29,7 @@ function SobrePage() {
       <RouteLine label="ROTA · NATAL → MUNDO" />
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mt-12">
-        <FadeIn className="lg:col-span-5">
+        <FadeIn className="lg:col-span-4">
           <div className="aspect-[4/5] bg-mist relative overflow-hidden">
             <img
               src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&auto=format&fit=crop"
@@ -44,7 +44,7 @@ function SobrePage() {
           </div>
         </FadeIn>
 
-        <FadeIn delay={150} className="lg:col-span-7">
+        <FadeIn delay={150} className="lg:col-span-8">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-10 lg:gap-20">
             <div className="relative z-[2] space-y-5 text-ink/85 leading-[1.8] text-[17px]">
               <p>A Innover nasceu da percepção de que pequenas empresas brasileiras com produto de qualidade muitas vezes ficam fora do mercado internacional. Não por falta de capacidade, mas por falta de informação técnica.</p>
