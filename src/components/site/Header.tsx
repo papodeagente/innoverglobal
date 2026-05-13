@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { useI18n, WHATSAPP_URL } from "@/lib/i18n";
 import { Menu, X } from "lucide-react";
+import logoFull from "@/assets/innover-logo-full.png";
+import logoMark from "@/assets/innover-mark.png";
 
 const NAV = [
   { to: "/", key: "nav.home" },
@@ -40,9 +42,9 @@ export function Header() {
         }`}
       >
         <div className="max-w-[1280px] mx-auto px-6 lg:px-10 h-[72px] flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2 group">
-            <span className="font-display font-bold text-xl text-navy tracking-tight">Innover</span>
-            <span className="label-mono hidden sm:inline">/ COMEX</span>
+          <Link to="/" className="flex items-center gap-3 group" aria-label="Innover Negócios Internacionais">
+            <img src={logoFull} alt="Innover Negócios Internacionais" className="h-9 lg:h-10 w-auto" />
+            <span className="label-mono hidden xl:inline">/ COMEX</span>
           </Link>
 
           <nav className="hidden lg:flex items-center gap-8">
@@ -90,7 +92,7 @@ export function Header() {
       {open && (
         <div className="fixed inset-0 z-[60] bg-white animate-in fade-in duration-200">
           <div className="flex items-center justify-between p-6 border-b border-line">
-            <span className="font-display font-bold text-xl text-navy">Innover</span>
+            <img src={logoMark} alt="Innover" className="h-9 w-auto" />
             <button onClick={() => setOpen(false)} aria-label="Close menu">
               <X className="w-6 h-6 text-navy" />
             </button>
