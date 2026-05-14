@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { FadeIn } from "@/components/site/FadeIn";
 import { RouteLine } from "@/components/site/RouteLine";
 import { Seal } from "@/components/site/Seal";
+import gracePhoto from "@/assets/grace-moura.png";
 
 export const Route = createFileRoute("/sobre")({
   head: () => ({
