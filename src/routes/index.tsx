@@ -3,16 +3,17 @@ import { useI18n, WHATSAPP_URL } from "@/lib/i18n";
 import { RouteNetwork } from "@/components/site/RouteNetwork";
 import { Seal } from "@/components/site/Seal";
 import { FadeIn } from "@/components/site/FadeIn";
-import { AnimatedNumber } from "@/components/site/AnimatedNumber";
+
 import { ShieldCheck, Wheat, MessagesSquare, ArrowRight } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Innover — Consultoria em Comércio Exterior" },
-      { name: "description", content: "Consultoria especializada em importação, exportação e acesso a mercados internacionais para empresas brasileiras." },
-      { property: "og:title", content: "Innover — Consultoria em Comércio Exterior" },
-      { property: "og:description", content: "Consultoria especializada em importação e exportação para empresas brasileiras de pequeno e médio porte." },
+      { title: "Innover Negócios Internacionais — Consultoria Comex e Despacho Aduaneiro" },
+      { name: "description", content: "Consultoria especializada em comércio exterior, despacho aduaneiro, importação e exportação. Atuação integrada para micro, pequenas e médias empresas brasileiras. Despachante Aduaneiro autorizada pela Receita Federal. 12 anos de experiência." },
+      { name: "keywords", content: "comércio exterior, despachante aduaneiro, consultoria comex, importação, exportação, DI DUIMP DUE, NCM, RADAR, drawback, regime aduaneiro especial, classificação fiscal, formação de preço importação, alimentos exportação, equipamentos médicos importação, cosméticos comex, vestuário importação" },
+      { property: "og:title", content: "Innover Negócios Internacionais — Consultoria Comex e Despacho Aduaneiro" },
+      { property: "og:description", content: "Consultoria estratégica e operacional em importação, exportação e despacho aduaneiro. Despachante Aduaneiro autorizada pela RFB. 12 anos de atuação." },
       { property: "og:url", content: "/" },
     ],
     links: [{ rel: "canonical", href: "/" }],
@@ -54,7 +55,7 @@ function HomePage() {
           <FadeIn delay={200} className="relative">
             <RouteNetwork className="w-full h-auto max-h-[280px] sm:max-h-[420px] lg:max-h-none" />
             <div className="absolute -bottom-2 right-0 hidden sm:block">
-              <Seal />
+              <Seal withCertification />
             </div>
           </FadeIn>
         </div>
@@ -63,11 +64,10 @@ function HomePage() {
       {/* STATS */}
       <section className="border-y border-line bg-mist/60">
         <div className="max-w-[1280px] mx-auto px-5 sm:px-6 lg:px-10 py-12 md:py-14 grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-          {/* TODO: confirmar números reais com Grace */}
-          <Stat value={50} prefix="+" label={t("stats.countries")} />
-          <Stat value={8} pad={2} label={t("stats.years")} />
-          <Stat value={100} suffix="%" label={t("stats.smb")} />
-          <Stat value={24} suffix="h" label={t("stats.response")} />
+          <StatStatic value="12" suffix=" ANOS" label={t("stats.years")} />
+          <StatStatic value="+ DE 50" label={t("stats.countries")} />
+          <StatStatic value="MPME" label={t("stats.smb")} />
+          <StatStatic value="RFB" label={t("stats.response")} />
         </div>
       </section>
 
@@ -79,9 +79,9 @@ function HomePage() {
         </FadeIn>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10 md:mt-14">
           {[
-            { icon: <ShieldCheck className="w-6 h-6" strokeWidth={1.4} />, title: "ESPECIALIZAÇÃO REGULATÓRIA", body: "Domínio técnico de procedimentos aduaneiros, classificação fiscal e habilitações Radar." },
-            { icon: <Wheat className="w-6 h-6" strokeWidth={1.4} />, title: "FOCO NO SETOR", body: "Experiência prática com alimentos e bebidas, incluindo certificações sanitárias e adequação a mercados específicos." },
-            { icon: <MessagesSquare className="w-6 h-6" strokeWidth={1.4} />, title: "ATENDIMENTO CONSULTIVO", body: "Nada de pacote pronto. Cada operação parte da realidade da sua empresa, do seu produto e do seu mercado-alvo." },
+            { icon: <ShieldCheck className="w-6 h-6" strokeWidth={1.4} />, title: "ATUAÇÃO INTEGRADA", body: "Consultoria estratégica e despacho aduaneiro sob o mesmo teto. Acompanhamos a operação do planejamento até a entrega final da mercadoria, sem terceirização de etapas críticas." },
+            { icon: <Wheat className="w-6 h-6" strokeWidth={1.4} />, title: "VISÃO COMPLETA DA CADEIA", body: "Domínio técnico do fluxo logístico, regulatório, fiscal e documental. Cada decisão é tomada com base na cadeia inteira, não em etapas isoladas." },
+            { icon: <MessagesSquare className="w-6 h-6" strokeWidth={1.4} />, title: "FOCO EM MITIGAÇÃO DE RISCOS", body: "Atuação preventiva em conformidade regulatória, classificação fiscal e regimes aduaneiros. Reduzimos exposição a multas, autuações e prejuízos operacionais." },
           ].map((c, i) => (
             <FadeIn key={c.title} delay={i * 80} className="p-6 md:p-8 border border-line bg-white card-lift">
               <div className="text-navy flex md:block justify-center">{c.icon}</div>
@@ -154,13 +154,13 @@ function HomePage() {
   );
 }
 
-function Stat({ value, prefix, suffix, pad, label }: { value: number; prefix?: string; suffix?: string; pad?: number; label: string }) {
+function StatStatic({ value, suffix, label }: { value: string; suffix?: string; label: string }) {
   return (
     <FadeIn className="">
-      <div className="font-display font-bold text-navy tracking-tight" style={{ fontSize: "clamp(2.5rem, 12vw, 4rem)", lineHeight: 1 }}>
-        <AnimatedNumber value={value} prefix={prefix} suffix={suffix} pad={pad} />
+      <div className="font-display font-bold text-navy tracking-tight" style={{ fontSize: "clamp(1.75rem, 8vw, 3.25rem)", lineHeight: 1, letterSpacing: "-0.025em" }}>
+        {value}{suffix ?? ""}
       </div>
-      <div className="label-mono mt-3 leading-snug">{label}</div>
+      <div className="mt-3 leading-snug text-mute font-normal text-sm">{label}</div>
     </FadeIn>
   );
 }

@@ -162,7 +162,7 @@ function ContatoPage() {
             <div className="flex items-start gap-3">
               <Phone className="w-5 h-5 text-accent-blue mt-0.5 shrink-0" strokeWidth={1.5} />
               <div>
-                <div className="label-mono">TELEFONE</div>
+                <div className="label-mono">TELEFONE · WHATSAPP</div>
                 <a href="tel:+5584996051655" className="text-navy hover:text-accent-blue">+55 (84) 99605-1655</a>
               </div>
             </div>
@@ -170,7 +170,13 @@ function ContatoPage() {
               <MapPin className="w-5 h-5 text-accent-blue mt-0.5 shrink-0" strokeWidth={1.5} />
               <div>
                 <div className="label-mono">ENDEREÇO</div>
-                <span className="text-ink">Natal · Rio Grande do Norte · Brasil</span>
+                <p className="text-ink/70 text-sm mb-2">Atendemos empresas de todo o Brasil. Atendimento híbrido (online e presencial quando necessário).</p>
+                <address className="text-ink not-italic text-sm leading-relaxed">
+                  Espaço empresarial SEAHUB<br />
+                  Av. Engenheiro Roberto Freire, 1962<br />
+                  Seaway Shopping, Loja 13, Capim Macio<br />
+                  Natal/RN, CEP 59082-095
+                </address>
               </div>
             </div>
             <div className="flex items-center gap-4 pt-3">

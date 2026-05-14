@@ -47,10 +47,10 @@ function SobrePage() {
         <FadeIn delay={150} className="lg:col-span-8">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-10 lg:gap-20">
             <div className="relative z-[2] space-y-5 text-ink/85 leading-[1.8] text-[17px]">
-              <p>A Innover nasceu da percepção de que pequenas empresas brasileiras com produto de qualidade muitas vezes ficam fora do mercado internacional. Não por falta de capacidade, mas por falta de informação técnica.</p>
-              <p>Importar e exportar exige domínio de regras aduaneiras, classificação fiscal, certificações sanitárias e adequação cultural a cada mercado. São assuntos que nenhum empreendedor precisa enfrentar sozinho, e que poucas consultorias se dispõem a explicar sem jargão.</p>
-              <p>Nossa proposta é simples: tirar o comércio exterior do plano abstrato e transformar em um conjunto de etapas claras. Acompanhamos cada cliente desde a primeira pergunta ('meu produto pode ser exportado?') até o despacho aduaneiro efetivo.</p>
-              <p>Atendemos empresas de todo o Brasil, com foco especial no setor de alimentos e bebidas, onde a expertise sanitária e regulatória é mais densa.</p>
+              <p>A Innover Negócios Internacionais é uma consultoria especializada em Comércio Exterior, com mais de 12 anos de experiência na estruturação, operação e otimização de processos de importação e exportação. Atende empresas brasileiras de diferentes portes e segmentos, com atuação estratégica e operacional integrada.</p>
+              <p>Grace Kelly Lula de Moura, diretora de projetos e fundadora da Innover, atua como Despachante Aduaneiro autorizada pela Receita Federal do Brasil. Essa combinação rara, consultoria estratégica somada à execução aduaneira direta, permite oferecer ao cliente uma visão completa da cadeia internacional: do planejamento comercial e regulatório até a liberação aduaneira e entrega da mercadoria.</p>
+              <p>Nossa atuação é orientada à redução de riscos, conformidade regulatória, eficiência logística e viabilidade econômica das operações. Trabalhamos com linguagem clara, orientação prática e foco em tomada de decisão, sem jargão técnico vazio.</p>
+              <p>Atendemos empresas de todo o Brasil, com forte presença nos segmentos de alimentos e bebidas, equipamentos e produtos médicos, cosméticos, vestuário e moda, e bens de consumo diversos.</p>
             </div>
 
             {/* documento decorativo */}
@@ -63,7 +63,7 @@ function SobrePage() {
                 <div>Emissor: INNOVER NEGÓCIOS INT.</div>
               </div>
               <div className="mt-4 h-px bg-line" />
-              <div className="mt-4 flex justify-end"><Seal className="scale-75 origin-bottom-right" /></div>
+              <div className="mt-4 flex justify-end"><Seal className="scale-75 origin-bottom-right" withCertification /></div>
             </div>
           </div>
         </FadeIn>
@@ -77,9 +77,9 @@ function SobrePage() {
         </FadeIn>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10 md:mt-12">
           {[
-            { n: "01", title: "TÉCNICA", body: "Decisão baseada em regulação, não em achismo." },
-            { n: "02", title: "CLAREZA", body: "Tudo é explicado em português comum, não em sopa de letras." },
-            { n: "03", title: "ACOMPANHAMENTO", body: "Não entregamos relatório e somos embora." },
+            { n: "01", title: "INTEGRAÇÃO", body: "Consultoria e despacho aduaneiro entregues pela mesma equipe." },
+            { n: "02", title: "PREVENÇÃO", body: "Foco em mitigar riscos antes que virem custo." },
+            { n: "03", title: "CLAREZA", body: "Tudo é explicado em português comum, não em sopa de letras." },
           ].map((v, i) => (
             <FadeIn key={v.n} delay={i * 80}>
               <div className="font-mono text-navy text-2xl">{v.n}</div>

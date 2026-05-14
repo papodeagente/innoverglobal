@@ -63,7 +63,16 @@ export function Footer() {
           <div>
             <div className="label-mono text-white/50 mb-4">CONTATO</div>
             <ul className="space-y-3 text-sm">
-              <li className="flex items-start gap-2"><MapPin className="w-4 h-4 mt-0.5 shrink-0 text-accent-blue" /><span>Natal/RN · Brasil</span></li>
+              <li className="flex items-start gap-2">
+                <MapPin className="w-4 h-4 mt-0.5 shrink-0 text-accent-blue" />
+                <address className="not-italic leading-relaxed">
+                  Espaço empresarial SEAHUB<br />
+                  Av. Eng. Roberto Freire, 1962<br />
+                  Seaway Shopping, Loja 13<br />
+                  Capim Macio · Natal/RN<br />
+                  CEP 59082-095
+                </address>
+              </li>
               <li className="flex items-start gap-2"><Mail className="w-4 h-4 mt-0.5 shrink-0 text-accent-blue" /><a href="mailto:grace@innovernegocios.com.br" className="hover:text-white break-all">grace@innovernegocios.com.br</a></li>
               <li className="flex items-start gap-2"><Phone className="w-4 h-4 mt-0.5 shrink-0 text-accent-blue" /><a href="https://wa.me/5584996051655" className="hover:text-white">+55 (84) 99605-1655</a></li>
             </ul>
@@ -71,23 +80,16 @@ export function Footer() {
               <a href="https://instagram.com/eugracemoura" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-white inline-flex items-center justify-center min-h-11 min-w-11"><Instagram className="w-7 h-7 md:w-5 md:h-5" /></a>
               <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-white inline-flex items-center justify-center min-h-11 min-w-11"><Linkedin className="w-7 h-7 md:w-5 md:h-5" /></a>
             </div>
-
-            {/* placeholder badges */}
-            <div className="flex flex-wrap items-center gap-3 mt-8">
-              {/* TODO: substituir por selos reais (AEB, RADAR) quando disponíveis */}
-              <div className="border border-white/15 px-3 py-2 label-mono text-white/60">MEMBRO AEB</div>
-              <div className="border border-white/15 px-3 py-2 label-mono text-white/60">RADAR</div>
-            </div>
           </div>
         </div>
 
         <div className="mt-12 md:mt-16 pt-6 md:pt-8 border-t border-white/10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-          <div className="text-xs text-white/40 space-y-1">
-            <div>INNOVER NEGÓCIOS INTERNACIONAIS LTDA.</div>
-            {/* TODO: inserir CNPJ real */}
-            <div>CNPJ: 00.000.000/0001-00 · © {new Date().getFullYear()} · {t("footer.rights")}</div>
+          <div className="font-mono uppercase tracking-wider space-y-1.5" style={{ fontSize: "10px", color: "#6B7280" }}>
+            <div>INNOVER NEGÓCIOS INTERNACIONAIS LTDA. · CNPJ 23.181.133/0001-07 · INSCRIÇÃO MUNICIPAL 2266005 · NATAL/RN/BR</div>
+            <div>DESPACHANTE ADUANEIRO AUTORIZADA PELA RECEITA FEDERAL DO BRASIL · 12 ANOS DE ATUAÇÃO</div>
+            <div className="text-white/30 normal-case tracking-normal pt-1" style={{ fontFamily: "inherit" }}>© {new Date().getFullYear()} · {t("footer.rights")}</div>
           </div>
-          <Seal variant="white" className="opacity-90" />
+          <Seal variant="white" className="opacity-90" withCertification />
         </div>
       </div>
 
