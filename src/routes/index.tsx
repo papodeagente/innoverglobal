@@ -55,7 +55,7 @@ function HomePage() {
           <FadeIn delay={200} className="relative">
             <RouteNetwork className="w-full h-auto max-h-[280px] sm:max-h-[420px] lg:max-h-none" />
             <div className="absolute -bottom-2 right-0 hidden sm:block">
-              <Seal />
+              <Seal withCertification />
             </div>
           </FadeIn>
         </div>
