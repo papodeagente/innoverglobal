@@ -154,13 +154,13 @@ function HomePage() {
   );
 }
 
-function Stat({ value, prefix, suffix, pad, label }: { value: number; prefix?: string; suffix?: string; pad?: number; label: string }) {
+function StatStatic({ value, suffix, label }: { value: string; suffix?: string; label: string }) {
   return (
     <FadeIn className="">
-      <div className="font-display font-bold text-navy tracking-tight" style={{ fontSize: "clamp(2.5rem, 12vw, 4rem)", lineHeight: 1 }}>
-        <AnimatedNumber value={value} prefix={prefix} suffix={suffix} pad={pad} />
+      <div className="font-display font-bold text-navy tracking-tight" style={{ fontSize: "clamp(1.75rem, 8vw, 3.25rem)", lineHeight: 1, letterSpacing: "-0.025em" }}>
+        {value}{suffix ?? ""}
       </div>
-      <div className="label-mono mt-3 leading-snug">{label}</div>
+      <div className="mt-3 leading-snug text-mute font-normal text-sm">{label}</div>
     </FadeIn>
   );
 }
