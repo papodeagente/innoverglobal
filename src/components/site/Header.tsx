@@ -41,9 +41,9 @@ export function Header() {
             : "bg-white/60 backdrop-blur-md"
         }`}
       >
-        <div className="max-w-[1280px] mx-auto px-6 lg:px-10 h-[72px] flex items-center justify-between">
+        <div className="max-w-[1280px] mx-auto px-5 sm:px-6 lg:px-10 h-[64px] md:h-[72px] flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3 group" aria-label="Innover Negócios Internacionais">
-            <img src={logoMark} alt="Innover" className="h-10 lg:h-12 w-auto" />
+            <img src={logoMark} alt="Innover" className="h-8 md:h-10 lg:h-12 w-auto" />
             <span className="label-mono hidden xl:inline">/ COMEX</span>
           </Link>
 
@@ -61,10 +61,10 @@ export function Header() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 md:gap-3">
             <button
               onClick={() => setLang(lang === "pt" ? "en" : "pt")}
-              className="hidden md:inline label-mono hover:text-navy transition-colors"
+              className="hidden md:inline label-mono hover:text-navy transition-colors min-h-11 px-2"
               aria-label="Toggle language"
             >
               {lang === "pt" ? "EN" : "PT"}
@@ -73,13 +73,13 @@ export function Header() {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden md:inline-flex btn-primary items-center px-4 py-2 text-sm font-medium rounded-sm"
+              className="hidden lg:inline-flex btn-primary items-center px-4 py-2 text-sm font-medium rounded-sm"
             >
               {t("nav.cta")}
             </a>
             <button
               onClick={() => setOpen(true)}
-              className="lg:hidden text-navy"
+              className="lg:hidden text-navy inline-flex items-center justify-center min-h-11 min-w-11"
               aria-label="Open menu"
             >
               <Menu className="w-6 h-6" />
