@@ -3,7 +3,7 @@ import { useI18n, WHATSAPP_URL } from "@/lib/i18n";
 import { RouteNetwork } from "@/components/site/RouteNetwork";
 import { Seal } from "@/components/site/Seal";
 import { FadeIn } from "@/components/site/FadeIn";
-import { AnimatedNumber } from "@/components/site/AnimatedNumber";
+
 import { ShieldCheck, Wheat, MessagesSquare, ArrowRight } from "lucide-react";
 
 export const Route = createFileRoute("/")({
