@@ -77,9 +77,9 @@ function SobrePage() {
         </FadeIn>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10 md:mt-12">
           {[
-            { n: "01", title: "TÉCNICA", body: "Decisão baseada em regulação, não em achismo." },
-            { n: "02", title: "CLAREZA", body: "Tudo é explicado em português comum, não em sopa de letras." },
-            { n: "03", title: "ACOMPANHAMENTO", body: "Não entregamos relatório e somos embora." },
+            { n: "01", title: "INTEGRAÇÃO", body: "Consultoria e despacho aduaneiro entregues pela mesma equipe." },
+            { n: "02", title: "PREVENÇÃO", body: "Foco em mitigar riscos antes que virem custo." },
+            { n: "03", title: "CLAREZA", body: "Tudo é explicado em português comum, não em sopa de letras." },
           ].map((v, i) => (
             <FadeIn key={v.n} delay={i * 80}>
               <div className="font-mono text-navy text-2xl">{v.n}</div>
