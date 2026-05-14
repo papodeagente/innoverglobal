@@ -94,20 +94,20 @@ function HomePage() {
 
       {/* SERVICES PREVIEW */}
       <section id="servicos" className="bg-mist/60 border-y border-line">
-        <div className="max-w-[1280px] mx-auto px-6 lg:px-10 py-24">
+        <div className="max-w-[1280px] mx-auto px-5 sm:px-6 lg:px-10 py-16 md:py-24">
           <FadeIn>
-            <div className="flex items-end justify-between flex-wrap gap-4 mb-12">
+            <div className="flex items-end justify-between flex-wrap gap-4 mb-10 md:mb-12">
               <div>
                 <div className="label-mono mb-3">SEÇÃO 03 / SERVIÇOS</div>
-                <h2 className="font-display text-4xl md:text-5xl font-semibold text-navy">{t("services.title")}</h2>
+                <h2 className="font-display h-fluid-h2 font-semibold text-navy">{t("services.title")}</h2>
                 <p className="text-mute mt-3 max-w-xl">{t("services.sub")}</p>
               </div>
-              <Link to="/servicos" className="label-mono text-navy hover:text-accent-blue inline-flex items-center gap-2">
+              <Link to="/servicos" className="label-mono text-navy hover:text-accent-blue inline-flex items-center gap-2 min-h-11">
                 Ver todos <ArrowRight className="w-3 h-3" />
               </Link>
             </div>
           </FadeIn>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
               { code: "INV-001", name: "Exportação" },
               { code: "INV-002", name: "Importação" },
@@ -130,21 +130,21 @@ function HomePage() {
 
       {/* CTA */}
       <section className="bg-navy text-white">
-        <div className="max-w-[1100px] mx-auto px-6 lg:px-10 py-28 text-center">
+        <div className="max-w-[1100px] mx-auto px-5 sm:px-6 lg:px-10 py-20 md:py-28 text-center">
           <FadeIn>
-            <h2 className="font-display text-4xl md:text-5xl font-semibold leading-[1.1] max-w-3xl mx-auto">
+            <h2 className="font-display h-fluid-h2 font-semibold leading-[1.1] max-w-3xl mx-auto">
               {t("cta.title")}
             </h2>
-            <p className="text-white/70 mt-6 text-lg">{t("cta.sub")}</p>
+            <p className="text-white/70 mt-5 md:mt-6 t-fluid-lead">{t("cta.sub")}</p>
             <a
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 mt-10 bg-white text-navy hover:bg-mist px-8 py-4 font-medium transition-colors"
+              className="inline-flex items-center justify-center w-full sm:w-auto gap-2 mt-8 md:mt-10 bg-white text-navy hover:bg-mist px-8 py-4 font-medium transition-colors min-h-11"
             >
               {t("cta.btn")} <ArrowRight className="w-4 h-4" />
             </a>
-            <div className="mt-12 flex justify-center">
+            <div className="mt-10 md:mt-12 flex justify-center">
               <Seal variant="white" />
             </div>
           </FadeIn>
@@ -157,10 +157,10 @@ function HomePage() {
 function Stat({ value, prefix, suffix, pad, label }: { value: number; prefix?: string; suffix?: string; pad?: number; label: string }) {
   return (
     <FadeIn className="">
-      <div className="font-display text-5xl md:text-6xl font-bold text-navy tracking-tight">
+      <div className="font-display font-bold text-navy tracking-tight" style={{ fontSize: "clamp(2.5rem, 12vw, 4rem)", lineHeight: 1 }}>
         <AnimatedNumber value={value} prefix={prefix} suffix={suffix} pad={pad} />
       </div>
-      <div className="label-mono mt-3">{label}</div>
+      <div className="label-mono mt-3 leading-snug">{label}</div>
     </FadeIn>
   );
 }
