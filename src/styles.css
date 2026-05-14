@@ -252,7 +252,40 @@
     mix-blend-mode: difference;
     background: rgba(255,255,255,0.05);
   }
+  /* Only show custom cursor on devices with a real mouse */
+  .cursor-dot { display: none; }
+  @media (hover: hover) and (pointer: fine) {
+    .cursor-dot { display: block; }
+  }
+
+  /* Touch-friendly tap targets */
   @media (max-width: 768px) {
-    .cursor-dot { display: none; }
+    .tap-44 { min-height: 44px; min-width: 44px; }
+  }
+
+  /* Fluid typography helpers */
+  .h-fluid-hero  { font-size: clamp(2.25rem, 8vw, 4.6rem); line-height: 1.04; }
+  .h-fluid-h1    { font-size: clamp(2rem, 6.5vw, 3.75rem); line-height: 1.06; }
+  .h-fluid-h2    { font-size: clamp(1.75rem, 5vw, 3.5rem);  line-height: 1.1; }
+  .h-fluid-h3    { font-size: clamp(1.25rem, 3vw, 1.75rem); line-height: 1.2; }
+  .t-fluid-body  { font-size: clamp(0.95rem, 1.4vw, 1.0625rem); }
+  .t-fluid-lead  { font-size: clamp(1rem, 1.8vw, 1.125rem); }
+
+  /* Hide scrollbar utility (already used inline) */
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { scrollbar-width: none; }
+
+  /* Reduced motion fallback already respected by Tailwind utilities */
+  @media (prefers-reduced-motion: reduce) {
+    .ticker-track, .pulse-node, .draw-line, .flow-line { animation: none !important; }
+    .reveal { transition: none !important; opacity: 1; transform: none; }
   }
 }
+
+/* Prevent iOS auto-zoom on input focus */
+@media (max-width: 768px) {
+  input, textarea, select { font-size: 16px; }
+}
+
+/* Avoid horizontal scroll on small screens */
+html, body { overflow-x: hidden; }
