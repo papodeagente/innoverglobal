@@ -26,34 +26,34 @@ function HomePage() {
   return (
     <>
       {/* HERO */}
-      <section className="min-h-[95vh] flex items-center px-6 lg:px-10 pt-10 pb-20 max-w-[1280px] mx-auto w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
+      <section className="lg:min-h-[95vh] flex items-center px-5 sm:px-6 lg:px-10 pt-16 pb-16 lg:pt-10 lg:pb-20 max-w-[1280px] mx-auto w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center w-full">
           <div>
             <FadeIn>
-              <div className="label-mono mb-6">{t("hero.label")}</div>
+              <div className="label-mono mb-5 md:mb-6">{t("hero.label")}</div>
             </FadeIn>
             <FadeIn delay={100}>
-              <h1 className="font-display font-bold text-[clamp(2.4rem,6vw,4.6rem)] leading-[1.02] text-navy tracking-[-0.025em]">
+              <h1 className="font-display font-bold h-fluid-hero text-navy tracking-[-0.025em]">
                 {t("hero.title")}
               </h1>
             </FadeIn>
             <FadeIn delay={200}>
-              <p className="mt-6 text-lg text-mute max-w-xl leading-relaxed">{t("hero.sub")}</p>
+              <p className="mt-5 md:mt-6 t-fluid-lead text-mute max-w-xl leading-relaxed">{t("hero.sub")}</p>
             </FadeIn>
             <FadeIn delay={300}>
-              <div className="mt-10 flex flex-wrap gap-3">
-                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-primary inline-flex items-center gap-2 px-6 py-3 text-sm font-medium">
+              <div className="mt-8 md:mt-10 flex flex-col sm:flex-row gap-3 sm:flex-wrap">
+                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-primary inline-flex w-full sm:w-auto justify-center items-center gap-2 px-6 py-3.5 text-sm font-medium min-h-11">
                   {t("hero.cta1")} <ArrowRight className="w-4 h-4" />
                 </a>
-                <a href="#servicos" className="btn-outline inline-flex items-center px-6 py-3 text-sm font-medium">
+                <a href="#servicos" className="btn-outline inline-flex w-full sm:w-auto justify-center items-center px-6 py-3.5 text-sm font-medium min-h-11">
                   {t("hero.cta2")}
                 </a>
               </div>
             </FadeIn>
           </div>
           <FadeIn delay={200} className="relative">
-            <RouteNetwork className="w-full h-auto" />
-            <div className="absolute -bottom-2 right-0">
+            <RouteNetwork className="w-full h-auto max-h-[280px] sm:max-h-[420px] lg:max-h-none" />
+            <div className="absolute -bottom-2 right-0 hidden sm:block">
               <Seal />
             </div>
           </FadeIn>
@@ -62,7 +62,7 @@ function HomePage() {
 
       {/* STATS */}
       <section className="border-y border-line bg-mist/60">
-        <div className="max-w-[1280px] mx-auto px-6 lg:px-10 py-14 grid grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="max-w-[1280px] mx-auto px-5 sm:px-6 lg:px-10 py-12 md:py-14 grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {/* TODO: confirmar números reais com Grace */}
           <Stat value={50} prefix="+" label={t("stats.countries")} />
           <Stat value={8} pad={2} label={t("stats.years")} />
