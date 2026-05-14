@@ -54,7 +54,7 @@ function SobrePage() {
             </div>
 
             {/* documento decorativo */}
-            <div className="relative z-[1] justify-self-center lg:justify-self-end w-full max-w-[320px] lg:max-w-none lg:w-[360px] lg:self-start lg:sticky lg:top-[120px] bg-white border border-line shadow-xl p-5 stamp">
+            <div className="relative z-[1] justify-self-center lg:justify-self-end w-full max-w-[320px] lg:max-w-none lg:w-[360px] lg:self-start lg:sticky lg:top-[120px] bg-white border border-line shadow-xl p-5 lg:stamp">
               <div className="label-mono">CERTIFICADO DE ORIGEM</div>
               <div className="mt-3 space-y-1 font-mono text-[10px] uppercase text-mute leading-relaxed">
                 <div>No. INV-2025-001</div>
