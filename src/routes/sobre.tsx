@@ -70,12 +70,12 @@ function SobrePage() {
       </div>
 
       {/* VALORES */}
-      <section className="mt-32 bg-warm p-10 lg:p-16">
+      <section className="mt-20 md:mt-32 bg-warm p-6 sm:p-10 lg:p-16">
         <FadeIn>
           <div className="label-mono mb-3">NOSSOS VALORES</div>
-          <h2 className="font-display text-3xl md:text-4xl font-semibold text-navy">Três coisas pelas quais somos contratados.</h2>
+          <h2 className="font-display h-fluid-h2 font-semibold text-navy">Três coisas pelas quais somos contratados.</h2>
         </FadeIn>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10 md:mt-12">
           {[
             { n: "01", title: "TÉCNICA", body: "Decisão baseada em regulação, não em achismo." },
             { n: "02", title: "CLAREZA", body: "Tudo é explicado em português comum, não em sopa de letras." },
