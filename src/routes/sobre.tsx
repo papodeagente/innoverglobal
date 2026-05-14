@@ -19,10 +19,10 @@ export const Route = createFileRoute("/sobre")({
 
 function SobrePage() {
   return (
-    <div className="max-w-[1280px] mx-auto px-6 lg:px-10 py-20">
+    <div className="max-w-[1280px] mx-auto px-5 sm:px-6 lg:px-10 py-16 md:py-20">
       <FadeIn>
         <div className="label-mono">PÁGINA / SOBRE</div>
-        <h1 className="font-display text-5xl md:text-6xl font-semibold text-navy mt-3 max-w-3xl tracking-[-0.02em]">
+        <h1 className="font-display h-fluid-h1 font-semibold text-navy mt-3 max-w-3xl tracking-[-0.02em]">
           Comércio exterior tirado do plano abstrato.
         </h1>
       </FadeIn>
