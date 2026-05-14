@@ -90,39 +90,45 @@ export function Header() {
 
       {/* mobile overlay */}
       {open && (
-        <div className="fixed inset-0 z-[60] bg-white animate-in fade-in duration-200">
-          <div className="flex items-center justify-between p-6 border-b border-line">
+        <div className="fixed inset-0 z-[60] bg-white animate-in slide-in-from-right duration-300 flex flex-col">
+          <div className="flex items-center justify-between px-5 py-4 border-b border-line">
             <img src={logoFull} alt="Innover Negócios Internacionais" className="h-9 w-auto" />
-            <button onClick={() => setOpen(false)} aria-label="Close menu">
-              <X className="w-6 h-6 text-navy" />
+            <button
+              onClick={() => setOpen(false)}
+              aria-label="Close menu"
+              className="inline-flex items-center justify-center min-h-11 min-w-11 text-navy"
+            >
+              <X className="w-6 h-6" />
             </button>
           </div>
-          <nav className="flex flex-col p-6 gap-1">
+          <nav className="flex flex-col px-5 py-4 gap-1 flex-1 overflow-y-auto">
             {NAV.map((n) => (
               <Link
                 key={n.to}
                 to={n.to}
                 onClick={() => setOpen(false)}
-                className="font-display text-3xl text-navy py-3 border-b border-line"
+                className="font-display text-[28px] font-semibold text-navy py-4 border-b border-line"
               >
                 {t(n.key)}
               </Link>
             ))}
             <button
               onClick={() => { setLang(lang === "pt" ? "en" : "pt"); }}
-              className="label-mono mt-6 self-start"
+              className="label-mono mt-6 self-start min-h-11 px-2"
             >
               {lang === "pt" ? "Switch to EN" : "Mudar para PT"}
             </button>
+          </nav>
+          <div className="px-5 pb-6 pt-2 border-t border-line">
             <a
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-6 btn-primary inline-flex items-center justify-center px-5 py-3 rounded-sm font-medium"
+              className="btn-primary inline-flex w-full items-center justify-center px-5 py-4 rounded-sm font-medium"
             >
               {t("nav.cta")}
             </a>
-          </nav>
+          </div>
         </div>
       )}
     </>
