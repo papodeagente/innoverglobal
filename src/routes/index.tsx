@@ -9,10 +9,11 @@ import { ShieldCheck, Wheat, MessagesSquare, ArrowRight } from "lucide-react";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Innover — Consultoria em Comércio Exterior" },
-      { name: "description", content: "Consultoria especializada em importação, exportação e acesso a mercados internacionais para empresas brasileiras." },
-      { property: "og:title", content: "Innover — Consultoria em Comércio Exterior" },
-      { property: "og:description", content: "Consultoria especializada em importação e exportação para empresas brasileiras de pequeno e médio porte." },
+      { title: "Innover Negócios Internacionais — Consultoria Comex e Despacho Aduaneiro" },
+      { name: "description", content: "Consultoria especializada em comércio exterior, despacho aduaneiro, importação e exportação. Atuação integrada para micro, pequenas e médias empresas brasileiras. Despachante Aduaneiro autorizada pela Receita Federal. 12 anos de experiência." },
+      { name: "keywords", content: "comércio exterior, despachante aduaneiro, consultoria comex, importação, exportação, DI DUIMP DUE, NCM, RADAR, drawback, regime aduaneiro especial, classificação fiscal, formação de preço importação, alimentos exportação, equipamentos médicos importação, cosméticos comex, vestuário importação" },
+      { property: "og:title", content: "Innover Negócios Internacionais — Consultoria Comex e Despacho Aduaneiro" },
+      { property: "og:description", content: "Consultoria estratégica e operacional em importação, exportação e despacho aduaneiro. Despachante Aduaneiro autorizada pela RFB. 12 anos de atuação." },
       { property: "og:url", content: "/" },
     ],
     links: [{ rel: "canonical", href: "/" }],
