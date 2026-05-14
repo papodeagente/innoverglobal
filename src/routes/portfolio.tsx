@@ -100,14 +100,14 @@ function PortfolioPage() {
   }, []);
 
   return (
-    <div className="py-20">
-      <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
+    <div className="py-16 md:py-20">
+      <div className="max-w-[1280px] mx-auto px-5 sm:px-6 lg:px-10">
         <FadeIn>
           <div className="label-mono">PÁGINA / PORTFÓLIO</div>
-          <h1 className="font-display text-5xl md:text-6xl font-semibold text-navy mt-3 max-w-3xl tracking-[-0.02em]">
+          <h1 className="font-display h-fluid-h1 font-semibold text-navy mt-3 max-w-3xl tracking-[-0.02em]">
             Casos reais. Operações concluídas.
           </h1>
-          <p className="text-mute mt-6 max-w-xl">Empresas brasileiras de pequeno porte, mercados internacionais reais.</p>
+          <p className="text-mute mt-5 md:mt-6 max-w-xl">Empresas brasileiras de pequeno porte, mercados internacionais reais.</p>
         </FadeIn>
         <RouteLine label="ROTA · CASO 01 → CASO 03" />
       </div>
@@ -115,36 +115,36 @@ function PortfolioPage() {
       {/* horizontal track on desktop, vertical on mobile */}
       <div
         ref={trackRef}
-        className="md:flex md:overflow-x-auto md:snap-x md:snap-mandatory mt-10 md:no-scrollbar"
+        className="md:flex md:overflow-x-auto md:snap-x md:snap-mandatory mt-8 md:mt-10 md:no-scrollbar"
         style={{ scrollbarWidth: "none" }}
       >
         {CASES.map((c, i) => (
           <article
             key={c.code}
-            className="md:min-w-[100vw] md:snap-start px-6 lg:px-16 py-10 md:py-20"
+            className="md:min-w-[100vw] md:snap-start px-5 sm:px-6 lg:px-16 py-10 md:py-20"
           >
-            <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-              <div className="lg:col-span-6">
+            <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-10 items-center">
+              <div className="lg:col-span-6 order-2 lg:order-1">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-1 h-8" style={{ background: c.accent }} />
                   <div className="label-mono">{c.code} · {c.sector}</div>
                 </div>
-                <h2 className="font-display text-3xl md:text-4xl font-semibold text-navy leading-tight">{c.title}</h2>
-                <div className="mt-6 space-y-4 text-ink/80 leading-relaxed">
+                <h2 className="font-display h-fluid-h2 font-semibold text-navy leading-tight">{c.title}</h2>
+                <div className="mt-5 md:mt-6 space-y-4 text-ink/80 leading-relaxed">
                   {c.body.map((p, j) => <p key={j}>{p}</p>)}
                 </div>
-                <div className="grid grid-cols-3 gap-4 mt-10 pt-8 border-t border-line">
+                <div className="grid grid-cols-3 gap-3 sm:gap-4 mt-8 md:mt-10 pt-6 md:pt-8 border-t border-line">
                   {c.metrics.map((m) => (
                     <div key={m.l}>
-                      <div className="font-display text-3xl font-bold text-navy">{m.v}</div>
+                      <div className="font-display text-2xl sm:text-3xl font-bold text-navy">{m.v}</div>
                       <div className="label-mono mt-2 text-[10px]">{m.l}</div>
                     </div>
                   ))}
                 </div>
               </div>
-              <div className="lg:col-span-6 aspect-[4/3] bg-mist overflow-hidden relative">
+              <div className="lg:col-span-6 aspect-[16/9] lg:aspect-[4/3] bg-mist overflow-hidden relative order-1 lg:order-2">
                 <img src={c.image} alt={c.title} loading="lazy" className="w-full h-full object-cover duotone" />
-                <div className="absolute top-4 right-4 label-mono bg-white/90 px-3 py-1.5 backdrop-blur">
+                <div className="absolute top-3 right-3 sm:top-4 sm:right-4 label-mono bg-white/90 px-3 py-1.5 backdrop-blur">
                   {String(i + 1).padStart(2, "0")} / {String(CASES.length).padStart(2, "0")}
                 </div>
               </div>
@@ -153,8 +153,8 @@ function PortfolioPage() {
         ))}
       </div>
 
-      <div className="max-w-[1280px] mx-auto px-6 lg:px-10 text-center mt-16">
-        <p className="text-mute">Em desktop, role a página: os casos avançam horizontalmente.</p>
+      <div className="max-w-[1280px] mx-auto px-5 sm:px-6 lg:px-10 text-center mt-12 md:mt-16">
+        <p className="text-mute hidden md:block">Em desktop, role a página: os casos avançam horizontalmente.</p>
       </div>
     </div>
   );
