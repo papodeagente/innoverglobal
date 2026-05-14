@@ -67,30 +67,30 @@ function ContatoPage() {
   };
 
   return (
-    <div className="max-w-[1280px] mx-auto px-6 lg:px-10 py-20">
+    <div className="max-w-[1280px] mx-auto px-5 sm:px-6 lg:px-10 py-16 md:py-20">
       <Toaster />
       <FadeIn>
         <div className="label-mono">PÁGINA / CONTATO</div>
-        <h1 className="font-display text-5xl md:text-6xl font-semibold text-navy mt-3 max-w-4xl tracking-[-0.02em] leading-[1.05]">
+        <h1 className="font-display h-fluid-h1 font-semibold text-navy mt-3 max-w-4xl tracking-[-0.02em] leading-[1.05]">
           Vamos colocar sua empresa fora do Brasil.
         </h1>
-        <p className="text-lg text-mute mt-6 max-w-xl">
+        <p className="t-fluid-lead text-mute mt-5 md:mt-6 max-w-xl">
           Primeira conversa é gratuita e leva 30 minutos. Sem compromisso.
         </p>
       </FadeIn>
       <RouteLine label="ROTA · CONVERSA → OPERAÇÃO" />
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mt-12">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-12 mt-10 md:mt-12">
         {/* form */}
-        <FadeIn className="lg:col-span-7">
+        <FadeIn className="lg:col-span-7 order-2 lg:order-1">
           {sent ? (
-            <div className="bg-mist border border-line p-12 text-center">
+            <div className="bg-mist border border-line p-8 md:p-12 text-center">
               <Check className="w-12 h-12 text-accent-blue mx-auto" strokeWidth={1.4} />
               <h3 className="font-display text-2xl text-navy mt-6">Mensagem enviada</h3>
               <p className="text-mute mt-3 max-w-sm mx-auto">Abrimos o WhatsApp pra você concluir o envio direto com a Grace.</p>
             </div>
           ) : (
-            <form onSubmit={onSubmit} className="space-y-6">
+            <form onSubmit={onSubmit} className="space-y-5 md:space-y-6">
               <Field label="Nome" name="nome" error={errors.nome} />
               <Field label="E-mail" name="email" type="email" error={errors.email} />
               <Field label="WhatsApp" name="whatsapp" placeholder="(84) 99999-9999" error={errors.whatsapp} />
@@ -98,7 +98,7 @@ function ContatoPage() {
 
               <div>
                 <label className="label-mono block mb-3">Você quer</label>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
                   {[
                     { v: "importar", l: "Importar" },
                     { v: "exportar", l: "Exportar" },
@@ -109,7 +109,7 @@ function ContatoPage() {
                       type="button"
                       key={o.v}
                       onClick={() => setIntencao(o.v as typeof intencao)}
-                      className={`py-3 px-4 text-sm border transition-all ${intencao === o.v ? "bg-navy text-white border-navy" : "bg-white text-ink border-line hover:border-navy"}`}
+                      className={`min-h-11 py-3 px-4 text-sm border transition-all ${intencao === o.v ? "bg-navy text-white border-navy" : "bg-white text-ink border-line hover:border-navy"}`}
                     >
                       {o.l}
                     </button>
@@ -124,12 +124,12 @@ function ContatoPage() {
                   name="mensagem"
                   rows={4}
                   maxLength={1000}
-                  className="w-full border border-line bg-white px-4 py-3 text-ink focus:border-navy outline-none transition-colors resize-none"
+                  className="w-full border border-line bg-white px-4 py-3 text-base text-ink focus:border-navy outline-none transition-colors resize-none"
                 />
                 {errors.mensagem && <p className="text-destructive text-xs mt-1">{errors.mensagem}</p>}
               </div>
 
-              <button type="submit" className="btn-primary inline-flex px-7 py-3.5 text-sm font-medium">
+              <button type="submit" className="btn-primary inline-flex w-full sm:w-auto justify-center px-7 py-4 text-sm font-medium min-h-12">
                 Enviar mensagem
               </button>
             </form>
@@ -137,26 +137,26 @@ function ContatoPage() {
         </FadeIn>
 
         {/* contact block */}
-        <FadeIn delay={120} className="lg:col-span-5">
-          <div className="bg-navy text-white p-8 lg:p-10">
+        <FadeIn delay={120} className="lg:col-span-5 order-1 lg:order-2">
+          <div className="bg-navy text-white p-6 sm:p-8 lg:p-10">
             <div className="label-mono text-white/60">CONVERSA DIRETA</div>
             <h3 className="font-display text-2xl mt-3">WhatsApp da Grace</h3>
             <a
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-6 inline-flex items-center gap-3 bg-white text-navy hover:bg-mist px-5 py-3.5 transition-colors"
+              className="mt-6 inline-flex w-full sm:w-auto justify-center items-center gap-3 bg-white text-navy hover:bg-mist px-5 py-4 transition-colors min-h-12"
             >
               <MessageCircle className="w-5 h-5" /> Abrir WhatsApp
             </a>
           </div>
 
-          <div className="border border-line p-8 lg:p-10 mt-6 space-y-5">
+          <div className="border border-line p-6 sm:p-8 lg:p-10 mt-6 space-y-5">
             <div className="flex items-start gap-3">
               <Mail className="w-5 h-5 text-accent-blue mt-0.5 shrink-0" strokeWidth={1.5} />
-              <div>
+              <div className="min-w-0">
                 <div className="label-mono">E-MAIL</div>
-                <a href="mailto:grace@innovernegocios.com.br" className="text-navy hover:text-accent-blue">grace@innovernegocios.com.br</a>
+                <a href="mailto:grace@innovernegocios.com.br" className="text-navy hover:text-accent-blue break-all">grace@innovernegocios.com.br</a>
               </div>
             </div>
             <div className="flex items-start gap-3">
@@ -174,8 +174,8 @@ function ContatoPage() {
               </div>
             </div>
             <div className="flex items-center gap-4 pt-3">
-              <a href="https://instagram.com/eugracemoura" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-navy hover:text-accent-blue"><Instagram className="w-5 h-5" /></a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-navy hover:text-accent-blue"><Linkedin className="w-5 h-5" /></a>
+              <a href="https://instagram.com/eugracemoura" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-navy hover:text-accent-blue inline-flex items-center justify-center min-h-11 min-w-11"><Instagram className="w-6 h-6" /></a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-navy hover:text-accent-blue inline-flex items-center justify-center min-h-11 min-w-11"><Linkedin className="w-6 h-6" /></a>
             </div>
           </div>
 
@@ -196,7 +196,7 @@ function Field({ label, name, type = "text", error, placeholder }: { label: stri
         type={type}
         placeholder={placeholder}
         maxLength={255}
-        className="w-full border border-line bg-white px-4 py-3 text-ink focus:border-navy outline-none transition-colors"
+        className="w-full border border-line bg-white px-4 py-3.5 md:py-3 text-base text-ink focus:border-navy outline-none transition-colors min-h-12 md:min-h-0"
       />
       {error && <p className="text-destructive text-xs mt-1">{error}</p>}
     </div>

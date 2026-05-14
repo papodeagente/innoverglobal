@@ -27,25 +27,27 @@ export function LoadingPassport() {
   return (
     <div
       className={`fixed inset-0 z-[10000] flex items-center justify-center bg-white transition-opacity duration-500 ${done ? "opacity-0 pointer-events-none" : "opacity-100"}`}
+      style={{ willChange: "opacity" }}
     >
       <div className="relative">
         {/* "passaporte" */}
-        <div className="w-[300px] h-[200px] border border-line bg-mist relative overflow-hidden flex items-center justify-center">
+        <div className="w-[220px] h-[150px] sm:w-[300px] sm:h-[200px] border border-line bg-mist relative overflow-hidden flex items-center justify-center">
           <div className="absolute top-3 left-3 label-mono">PASSPORT · INNOVER</div>
-          <img src={logoFull} alt="Innover" className="w-[210px] h-auto" />
+          <img src={logoFull} alt="Innover" className="w-[150px] sm:w-[210px] h-auto" />
           <div className="absolute bottom-3 left-3 right-3 h-px bg-navy/20" />
           <div className="absolute bottom-6 left-3 label-mono">NATAL/RN/BR</div>
         </div>
         {/* carimbo circular */}
         <div
-          className="absolute -right-4 -bottom-4 w-[110px] h-[110px] rounded-full border-2 border-navy text-navy flex flex-col items-center justify-center font-mono uppercase text-[9px] leading-tight"
+          className="absolute -right-3 -bottom-3 sm:-right-4 sm:-bottom-4 w-[80px] h-[80px] sm:w-[110px] sm:h-[110px] rounded-full border-2 border-navy text-navy flex flex-col items-center justify-center font-mono uppercase text-[8px] sm:text-[9px] leading-tight bg-white"
           style={{
             transform: done ? "rotate(-12deg) scale(1)" : "rotate(60deg) scale(0)",
             opacity: done ? 1 : 0,
             transition: "transform 600ms cubic-bezier(0.34, 1.56, 0.64, 1), opacity 300ms ease",
+            willChange: "transform, opacity",
           }}
         >
-          <span className="font-bold text-[11px]">INNOVER</span>
+          <span className="font-bold text-[10px] sm:text-[11px]">INNOVER</span>
           <span>COMEX</span>
           <span>2025</span>
         </div>

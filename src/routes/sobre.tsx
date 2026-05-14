@@ -19,10 +19,10 @@ export const Route = createFileRoute("/sobre")({
 
 function SobrePage() {
   return (
-    <div className="max-w-[1280px] mx-auto px-6 lg:px-10 py-20">
+    <div className="max-w-[1280px] mx-auto px-5 sm:px-6 lg:px-10 py-16 md:py-20">
       <FadeIn>
         <div className="label-mono">PÁGINA / SOBRE</div>
-        <h1 className="font-display text-5xl md:text-6xl font-semibold text-navy mt-3 max-w-3xl tracking-[-0.02em]">
+        <h1 className="font-display h-fluid-h1 font-semibold text-navy mt-3 max-w-3xl tracking-[-0.02em]">
           Comércio exterior tirado do plano abstrato.
         </h1>
       </FadeIn>
@@ -54,7 +54,7 @@ function SobrePage() {
             </div>
 
             {/* documento decorativo */}
-            <div className="relative z-[1] justify-self-center lg:justify-self-end w-full max-w-[320px] lg:max-w-none lg:w-[360px] lg:self-start lg:sticky lg:top-[120px] bg-white border border-line shadow-xl p-5 stamp">
+            <div className="relative z-[1] justify-self-center lg:justify-self-end w-full max-w-[320px] lg:max-w-none lg:w-[360px] lg:self-start lg:sticky lg:top-[120px] bg-white border border-line shadow-xl p-5 lg:stamp">
               <div className="label-mono">CERTIFICADO DE ORIGEM</div>
               <div className="mt-3 space-y-1 font-mono text-[10px] uppercase text-mute leading-relaxed">
                 <div>No. INV-2025-001</div>
@@ -70,12 +70,12 @@ function SobrePage() {
       </div>
 
       {/* VALORES */}
-      <section className="mt-32 bg-warm p-10 lg:p-16">
+      <section className="mt-20 md:mt-32 bg-warm p-6 sm:p-10 lg:p-16">
         <FadeIn>
           <div className="label-mono mb-3">NOSSOS VALORES</div>
-          <h2 className="font-display text-3xl md:text-4xl font-semibold text-navy">Três coisas pelas quais somos contratados.</h2>
+          <h2 className="font-display h-fluid-h2 font-semibold text-navy">Três coisas pelas quais somos contratados.</h2>
         </FadeIn>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10 md:mt-12">
           {[
             { n: "01", title: "TÉCNICA", body: "Decisão baseada em regulação, não em achismo." },
             { n: "02", title: "CLAREZA", body: "Tudo é explicado em português comum, não em sopa de letras." },
