@@ -196,7 +196,7 @@ function Field({ label, name, type = "text", error, placeholder }: { label: stri
         type={type}
         placeholder={placeholder}
         maxLength={255}
-        className="w-full border border-line bg-white px-4 py-3 text-ink focus:border-navy outline-none transition-colors"
+        className="w-full border border-line bg-white px-4 py-3.5 md:py-3 text-base text-ink focus:border-navy outline-none transition-colors min-h-12 md:min-h-0"
       />
       {error && <p className="text-destructive text-xs mt-1">{error}</p>}
     </div>
