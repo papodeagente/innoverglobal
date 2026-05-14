@@ -94,16 +94,24 @@ function ServicosPage() {
       </FadeIn>
 
       <Sheet open={!!openService} onOpenChange={(o) => !o && setOpenService(null)}>
-        <SheetContent className="sm:max-w-lg overflow-y-auto">
+        <SheetContent
+          side="right"
+          className="w-full sm:max-w-lg overflow-y-auto p-5 sm:p-6"
+        >
           {openService && (
             <>
               <SheetHeader>
                 <div className="label-mono">{openService.code}</div>
-                <SheetTitle className="font-display text-3xl text-navy">{openService.title}</SheetTitle>
+                <SheetTitle className="font-display text-2xl sm:text-3xl text-navy text-left">{openService.title}</SheetTitle>
               </SheetHeader>
-              <div className="mt-6 -mx-2"><WorldMap variant={openService.variant} /></div>
-              <p className="mt-6 text-ink/85 leading-relaxed">{openService.long}</p>
-              <a href={`https://wa.me/5584996051655?text=${encodeURIComponent(openService.whatsappMessage)}`} target="_blank" rel="noopener noreferrer" className="btn-primary mt-8 inline-flex items-center gap-2 px-5 py-3 text-sm font-medium">
+              <div className="mt-6 -mx-2 max-w-[220px] sm:max-w-none mx-auto"><WorldMap variant={openService.variant} /></div>
+              <p className="mt-6 text-ink/85 leading-relaxed pb-24 sm:pb-0">{openService.long}</p>
+              <a
+                href={`https://wa.me/5584996051655?text=${encodeURIComponent(openService.whatsappMessage)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary fixed sm:static left-0 right-0 bottom-0 sm:mt-8 inline-flex items-center justify-center gap-2 px-5 py-4 text-sm font-medium min-h-12"
+              >
                 Falar pelo WhatsApp <ArrowRight className="w-4 h-4" />
               </a>
             </>
