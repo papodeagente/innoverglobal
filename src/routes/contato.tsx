@@ -151,12 +151,12 @@ function ContatoPage() {
             </a>
           </div>
 
-          <div className="border border-line p-8 lg:p-10 mt-6 space-y-5">
+          <div className="border border-line p-6 sm:p-8 lg:p-10 mt-6 space-y-5">
             <div className="flex items-start gap-3">
               <Mail className="w-5 h-5 text-accent-blue mt-0.5 shrink-0" strokeWidth={1.5} />
-              <div>
+              <div className="min-w-0">
                 <div className="label-mono">E-MAIL</div>
-                <a href="mailto:grace@innovernegocios.com.br" className="text-navy hover:text-accent-blue">grace@innovernegocios.com.br</a>
+                <a href="mailto:grace@innovernegocios.com.br" className="text-navy hover:text-accent-blue break-all">grace@innovernegocios.com.br</a>
               </div>
             </div>
             <div className="flex items-start gap-3">
@@ -174,8 +174,8 @@ function ContatoPage() {
               </div>
             </div>
             <div className="flex items-center gap-4 pt-3">
-              <a href="https://instagram.com/eugracemoura" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-navy hover:text-accent-blue"><Instagram className="w-5 h-5" /></a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-navy hover:text-accent-blue"><Linkedin className="w-5 h-5" /></a>
+              <a href="https://instagram.com/eugracemoura" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-navy hover:text-accent-blue inline-flex items-center justify-center min-h-11 min-w-11"><Instagram className="w-6 h-6" /></a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-navy hover:text-accent-blue inline-flex items-center justify-center min-h-11 min-w-11"><Linkedin className="w-6 h-6" /></a>
             </div>
           </div>
 
