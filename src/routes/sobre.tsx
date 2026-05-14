@@ -33,10 +33,10 @@ function SobrePage() {
         <FadeIn className="lg:col-span-4">
           <div className="aspect-[4/5] bg-mist relative overflow-hidden">
             <img
-              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&auto=format&fit=crop"
+              src={gracePhoto}
               alt="Grace Moura, fundadora da Innover"
               loading="lazy"
-              className="w-full h-full object-cover duotone"
+              className="w-full h-full object-cover"
             />
           </div>
           <div className="mt-4 text-sm">
