@@ -80,17 +80,17 @@ function ContatoPage() {
       </FadeIn>
       <RouteLine label="ROTA · CONVERSA → OPERAÇÃO" />
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mt-12">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-12 mt-10 md:mt-12">
         {/* form */}
-        <FadeIn className="lg:col-span-7">
+        <FadeIn className="lg:col-span-7 order-2 lg:order-1">
           {sent ? (
-            <div className="bg-mist border border-line p-12 text-center">
+            <div className="bg-mist border border-line p-8 md:p-12 text-center">
               <Check className="w-12 h-12 text-accent-blue mx-auto" strokeWidth={1.4} />
               <h3 className="font-display text-2xl text-navy mt-6">Mensagem enviada</h3>
               <p className="text-mute mt-3 max-w-sm mx-auto">Abrimos o WhatsApp pra você concluir o envio direto com a Grace.</p>
             </div>
           ) : (
-            <form onSubmit={onSubmit} className="space-y-6">
+            <form onSubmit={onSubmit} className="space-y-5 md:space-y-6">
               <Field label="Nome" name="nome" error={errors.nome} />
               <Field label="E-mail" name="email" type="email" error={errors.email} />
               <Field label="WhatsApp" name="whatsapp" placeholder="(84) 99999-9999" error={errors.whatsapp} />
@@ -98,7 +98,7 @@ function ContatoPage() {
 
               <div>
                 <label className="label-mono block mb-3">Você quer</label>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
                   {[
                     { v: "importar", l: "Importar" },
                     { v: "exportar", l: "Exportar" },
@@ -109,7 +109,7 @@ function ContatoPage() {
                       type="button"
                       key={o.v}
                       onClick={() => setIntencao(o.v as typeof intencao)}
-                      className={`py-3 px-4 text-sm border transition-all ${intencao === o.v ? "bg-navy text-white border-navy" : "bg-white text-ink border-line hover:border-navy"}`}
+                      className={`min-h-11 py-3 px-4 text-sm border transition-all ${intencao === o.v ? "bg-navy text-white border-navy" : "bg-white text-ink border-line hover:border-navy"}`}
                     >
                       {o.l}
                     </button>
@@ -124,12 +124,12 @@ function ContatoPage() {
                   name="mensagem"
                   rows={4}
                   maxLength={1000}
-                  className="w-full border border-line bg-white px-4 py-3 text-ink focus:border-navy outline-none transition-colors resize-none"
+                  className="w-full border border-line bg-white px-4 py-3 text-base text-ink focus:border-navy outline-none transition-colors resize-none"
                 />
                 {errors.mensagem && <p className="text-destructive text-xs mt-1">{errors.mensagem}</p>}
               </div>
 
-              <button type="submit" className="btn-primary inline-flex px-7 py-3.5 text-sm font-medium">
+              <button type="submit" className="btn-primary inline-flex w-full sm:w-auto justify-center px-7 py-4 text-sm font-medium min-h-12">
                 Enviar mensagem
               </button>
             </form>
@@ -137,7 +137,7 @@ function ContatoPage() {
         </FadeIn>
 
         {/* contact block */}
-        <FadeIn delay={120} className="lg:col-span-5">
+        <FadeIn delay={120} className="lg:col-span-5 order-1 lg:order-2">
           <div className="bg-navy text-white p-8 lg:p-10">
             <div className="label-mono text-white/60">CONVERSA DIRETA</div>
             <h3 className="font-display text-2xl mt-3">WhatsApp da Grace</h3>
