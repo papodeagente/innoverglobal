@@ -54,28 +54,33 @@ const FAQ = [
 
 function FaqPage() {
   return (
-    <div className="max-w-[920px] mx-auto px-6 lg:px-10 py-20">
+    <div className="max-w-[920px] mx-auto px-5 sm:px-6 lg:px-10 py-16 md:py-20">
       <FadeIn>
         <div className="label-mono">PÁGINA / FAQ</div>
-        <h1 className="font-display text-5xl md:text-6xl font-semibold text-navy mt-3 tracking-[-0.02em]">
+        <h1 className="font-display h-fluid-h1 font-semibold text-navy mt-3 tracking-[-0.02em]">
           Perguntas que sempre nos fazem.
         </h1>
-        <p className="text-mute mt-6 max-w-xl">Respostas técnicas, sem rodeios.</p>
+        <p className="text-mute mt-5 md:mt-6 max-w-xl">Respostas técnicas, sem rodeios.</p>
       </FadeIn>
       <RouteLine />
 
-      <div className="mt-12">
+      <div className="mt-10 md:mt-12">
         <Accordion type="single" collapsible className="w-full">
           {FAQ.map((f, i) => (
             <FadeIn key={i} delay={i * 30}>
               <AccordionItem value={`faq-${i}`} className="border-line">
-                <AccordionTrigger className="py-6 text-left hover:no-underline group">
-                  <div className="flex items-start gap-4 pr-4">
-                    <span className="label-mono pt-1.5 shrink-0">FAQ-{String(i + 1).padStart(2, "0")}</span>
-                    <span className="font-display font-semibold text-lg md:text-xl text-navy group-hover:text-accent-blue transition-colors">{f.q}</span>
+                <AccordionTrigger className="py-5 md:py-6 text-left hover:no-underline group min-h-11">
+                  <div className="flex items-start gap-3 sm:gap-4 pr-2 sm:pr-4">
+                    <span className="label-mono pt-1.5 shrink-0 hidden sm:inline">FAQ-{String(i + 1).padStart(2, "0")}</span>
+                    <span
+                      className="font-display font-semibold text-navy group-hover:text-accent-blue transition-colors"
+                      style={{ fontSize: "clamp(15px, 3.5vw, 18px)" }}
+                    >
+                      {f.q}
+                    </span>
                   </div>
                 </AccordionTrigger>
-                <AccordionContent className="pl-[88px] pr-4 pb-6 text-ink/80 leading-relaxed text-[15px]">
+                <AccordionContent className="sm:pl-[88px] pr-2 sm:pr-4 pb-8 text-ink/80 leading-relaxed text-[15px]">
                   {f.a}
                 </AccordionContent>
               </AccordionItem>
