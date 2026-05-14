@@ -67,14 +67,14 @@ function ContatoPage() {
   };
 
   return (
-    <div className="max-w-[1280px] mx-auto px-6 lg:px-10 py-20">
+    <div className="max-w-[1280px] mx-auto px-5 sm:px-6 lg:px-10 py-16 md:py-20">
       <Toaster />
       <FadeIn>
         <div className="label-mono">PÁGINA / CONTATO</div>
-        <h1 className="font-display text-5xl md:text-6xl font-semibold text-navy mt-3 max-w-4xl tracking-[-0.02em] leading-[1.05]">
+        <h1 className="font-display h-fluid-h1 font-semibold text-navy mt-3 max-w-4xl tracking-[-0.02em] leading-[1.05]">
           Vamos colocar sua empresa fora do Brasil.
         </h1>
-        <p className="text-lg text-mute mt-6 max-w-xl">
+        <p className="t-fluid-lead text-mute mt-5 md:mt-6 max-w-xl">
           Primeira conversa é gratuita e leva 30 minutos. Sem compromisso.
         </p>
       </FadeIn>
