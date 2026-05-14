@@ -64,11 +64,10 @@ function HomePage() {
       {/* STATS */}
       <section className="border-y border-line bg-mist/60">
         <div className="max-w-[1280px] mx-auto px-5 sm:px-6 lg:px-10 py-12 md:py-14 grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-          {/* TODO: confirmar números reais com Grace */}
-          <Stat value={50} prefix="+" label={t("stats.countries")} />
-          <Stat value={8} pad={2} label={t("stats.years")} />
-          <Stat value={100} suffix="%" label={t("stats.smb")} />
-          <Stat value={24} suffix="h" label={t("stats.response")} />
+          <StatStatic value="12" suffix=" ANOS" label={t("stats.years")} />
+          <StatStatic value="+ DE 50" label={t("stats.countries")} />
+          <StatStatic value="MPME" label={t("stats.smb")} />
+          <StatStatic value="RFB" label={t("stats.response")} />
         </div>
       </section>
 
@@ -80,9 +79,9 @@ function HomePage() {
         </FadeIn>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10 md:mt-14">
           {[
-            { icon: <ShieldCheck className="w-6 h-6" strokeWidth={1.4} />, title: "ESPECIALIZAÇÃO REGULATÓRIA", body: "Domínio técnico de procedimentos aduaneiros, classificação fiscal e habilitações Radar." },
-            { icon: <Wheat className="w-6 h-6" strokeWidth={1.4} />, title: "FOCO NO SETOR", body: "Experiência prática com alimentos e bebidas, incluindo certificações sanitárias e adequação a mercados específicos." },
-            { icon: <MessagesSquare className="w-6 h-6" strokeWidth={1.4} />, title: "ATENDIMENTO CONSULTIVO", body: "Nada de pacote pronto. Cada operação parte da realidade da sua empresa, do seu produto e do seu mercado-alvo." },
+            { icon: <ShieldCheck className="w-6 h-6" strokeWidth={1.4} />, title: "ATUAÇÃO INTEGRADA", body: "Consultoria estratégica e despacho aduaneiro sob o mesmo teto. Acompanhamos a operação do planejamento até a entrega final da mercadoria, sem terceirização de etapas críticas." },
+            { icon: <Wheat className="w-6 h-6" strokeWidth={1.4} />, title: "VISÃO COMPLETA DA CADEIA", body: "Domínio técnico do fluxo logístico, regulatório, fiscal e documental. Cada decisão é tomada com base na cadeia inteira, não em etapas isoladas." },
+            { icon: <MessagesSquare className="w-6 h-6" strokeWidth={1.4} />, title: "FOCO EM MITIGAÇÃO DE RISCOS", body: "Atuação preventiva em conformidade regulatória, classificação fiscal e regimes aduaneiros. Reduzimos exposição a multas, autuações e prejuízos operacionais." },
           ].map((c, i) => (
             <FadeIn key={c.title} delay={i * 80} className="p-6 md:p-8 border border-line bg-white card-lift">
               <div className="text-navy flex md:block justify-center">{c.icon}</div>
