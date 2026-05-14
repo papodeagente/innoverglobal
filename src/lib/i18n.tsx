@@ -8,7 +8,7 @@ const DICT: Dict = {
   "nav.home": { pt: "Home", en: "Home" },
   "nav.about": { pt: "Sobre", en: "About" },
   "nav.services": { pt: "Serviços", en: "Services" },
-  "nav.portfolio": { pt: "Portfólio", en: "Portfolio" },
+  "nav.portfolio": { pt: "Segmentos", en: "Segments" },
   "nav.faq": { pt: "FAQ", en: "FAQ" },
   "nav.contact": { pt: "Contato", en: "Contact" },
   "nav.cta": { pt: "Fale conosco", en: "Talk to us" },
