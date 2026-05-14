@@ -72,21 +72,21 @@ function HomePage() {
       </section>
 
       {/* WHY */}
-      <section className="max-w-[1280px] mx-auto px-6 lg:px-10 py-24">
+      <section className="max-w-[1280px] mx-auto px-5 sm:px-6 lg:px-10 py-16 md:py-24">
         <FadeIn>
           <div className="label-mono mb-3">SEÇÃO 02 / DIFERENCIAIS</div>
-          <h2 className="font-display text-4xl md:text-5xl font-semibold text-navy max-w-2xl">{t("why.title")}</h2>
+          <h2 className="font-display h-fluid-h2 font-semibold text-navy max-w-2xl">{t("why.title")}</h2>
         </FadeIn>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-14">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10 md:mt-14">
           {[
             { icon: <ShieldCheck className="w-6 h-6" strokeWidth={1.4} />, title: "ESPECIALIZAÇÃO REGULATÓRIA", body: "Domínio técnico de procedimentos aduaneiros, classificação fiscal e habilitações Radar." },
             { icon: <Wheat className="w-6 h-6" strokeWidth={1.4} />, title: "FOCO NO SETOR", body: "Experiência prática com alimentos e bebidas, incluindo certificações sanitárias e adequação a mercados específicos." },
             { icon: <MessagesSquare className="w-6 h-6" strokeWidth={1.4} />, title: "ATENDIMENTO CONSULTIVO", body: "Nada de pacote pronto. Cada operação parte da realidade da sua empresa, do seu produto e do seu mercado-alvo." },
           ].map((c, i) => (
-            <FadeIn key={c.title} delay={i * 80} className="p-8 border border-line bg-white card-lift">
-              <div className="text-navy">{c.icon}</div>
-              <div className="label-mono mt-6 text-navy">{c.title}</div>
-              <p className="mt-3 text-ink/80 leading-relaxed">{c.body}</p>
+            <FadeIn key={c.title} delay={i * 80} className="p-6 md:p-8 border border-line bg-white card-lift">
+              <div className="text-navy flex md:block justify-center">{c.icon}</div>
+              <div className="label-mono mt-5 md:mt-6 text-navy text-center md:text-left">{c.title}</div>
+              <p className="mt-3 text-ink/80 leading-relaxed text-center md:text-left">{c.body}</p>
             </FadeIn>
           ))}
         </div>
