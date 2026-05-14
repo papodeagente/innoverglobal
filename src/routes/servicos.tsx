@@ -45,34 +45,34 @@ function ServicosPage() {
   const [openService, setOpenService] = useState<Service | null>(null);
 
   return (
-    <div className="max-w-[1280px] mx-auto px-6 lg:px-10 py-20">
+    <div className="max-w-[1280px] mx-auto px-5 sm:px-6 lg:px-10 py-16 md:py-20">
       <FadeIn>
         <div className="label-mono">PÁGINA / SERVIÇOS</div>
-        <h1 className="font-display text-5xl md:text-6xl font-semibold text-navy mt-3 max-w-3xl tracking-[-0.02em]">
+        <h1 className="font-display h-fluid-h1 font-semibold text-navy mt-3 max-w-3xl tracking-[-0.02em]">
           Seis serviços, uma metodologia.
         </h1>
-        <p className="mt-6 text-lg text-mute max-w-2xl">
+        <p className="mt-5 md:mt-6 t-fluid-lead text-mute max-w-2xl">
           Toda operação na Innover começa com diagnóstico. Nada de pacote pronto.
         </p>
       </FadeIn>
       <RouteLine label="ROTA · DIAGNÓSTICO → OPERAÇÃO" />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-12">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 mt-10 md:mt-12">
         {SERVICES.map((s, i) => (
           <FadeIn key={s.code} delay={(i % 3) * 60}>
-            <article className="border border-line bg-white p-7 card-lift h-full flex flex-col group">
+            <article className="border border-line bg-white p-6 sm:p-7 card-lift h-full flex flex-col group">
               <div className="flex items-start justify-between">
                 <div className="label-mono group-hover:text-accent-blue transition-colors">{s.code}</div>
                 <div className="w-2 h-2 rounded-full" style={{ background: s.badgeColor }} />
               </div>
-              <div className="mt-5 -mx-2 group-hover:scale-[1.03] transition-transform">
+              <div className="mt-5 -mx-2 mx-auto sm:mx-0 max-w-[160px] sm:max-w-none w-full group-hover:scale-[1.03] transition-transform">
                 <WorldMap variant={s.variant} />
               </div>
-              <h3 className="font-display text-xl font-semibold text-navy mt-5">{s.title}</h3>
+              <h3 className="font-display h-fluid-h3 font-semibold text-navy mt-5">{s.title}</h3>
               <p className="mt-2 text-sm text-ink/75 leading-relaxed flex-1">{s.short}</p>
               <button
                 onClick={() => setOpenService(s)}
-                className="mt-6 inline-flex items-center gap-2 text-sm text-accent-blue hover:gap-3 transition-all"
+                className="mt-6 inline-flex w-full sm:w-auto justify-center sm:justify-start items-center gap-2 text-sm text-accent-blue hover:gap-3 transition-all min-h-11 border sm:border-0 border-line sm:px-0 px-4"
               >
                 Saber mais <ArrowRight className="w-3 h-3" />
               </button>
@@ -81,14 +81,14 @@ function ServicosPage() {
         ))}
       </div>
 
-      <FadeIn className="mt-24 text-center bg-mist py-16 px-6">
-        <p className="text-xl text-navy max-w-2xl mx-auto">
+      <FadeIn className="mt-20 md:mt-24 text-center bg-mist py-12 md:py-16 px-5 sm:px-6">
+        <p className="text-lg md:text-xl text-navy max-w-2xl mx-auto">
           Não encontrou o que precisa? Toda operação na Innover começa com uma conversa.
         </p>
-        <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-primary inline-flex mt-8 px-6 py-3 text-sm font-medium">
+        <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-primary inline-flex w-full sm:w-auto justify-center mt-6 md:mt-8 px-6 py-3.5 text-sm font-medium min-h-11">
           Conversar pelo WhatsApp
         </a>
-        <div className="flex justify-center mt-12">
+        <div className="flex justify-center mt-10 md:mt-12">
           <Seal />
         </div>
       </FadeIn>
