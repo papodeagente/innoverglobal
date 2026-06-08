@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { useI18n, WHATSAPP_URL } from "@/lib/i18n";
-import { Menu, X } from "lucide-react";
+import { LogIn, Menu, X } from "lucide-react";
 import logoFull from "@/assets/innover-logo-full.png";
 import logoMark from "@/assets/innover-mark.png";
 
@@ -13,6 +13,11 @@ const NAV = [
   { to: "/faq", key: "nav.faq" },
   { to: "/contato", key: "nav.contact" },
 ] as const;
+
+// URL do sistema Innover OS. Sobrescreve via VITE_SYSTEM_URL no build se mudar o domínio.
+const SYSTEM_LOGIN_URL =
+  (import.meta as { env?: { VITE_SYSTEM_URL?: string } }).env?.VITE_SYSTEM_URL ??
+  "https://app.innovernegocios.com.br/login";
 
 export function Header() {
   const { t, lang, setLang } = useI18n();
@@ -70,6 +75,13 @@ export function Header() {
               {lang === "pt" ? "EN" : "PT"}
             </button>
             <a
+              href={SYSTEM_LOGIN_URL}
+              className="hidden lg:inline-flex items-center gap-1.5 text-sm font-medium text-navy border border-navy hover:bg-navy hover:text-white transition-colors px-4 py-2 rounded-sm"
+            >
+              <LogIn className="w-4 h-4" />
+              Acessar Sistema
+            </a>
+            <a
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
@@ -119,7 +131,14 @@ export function Header() {
               {lang === "pt" ? "Switch to EN" : "Mudar para PT"}
             </button>
           </nav>
-          <div className="px-5 pb-6 pt-2 border-t border-line">
+          <div className="px-5 pb-6 pt-2 border-t border-line space-y-2">
+            <a
+              href={SYSTEM_LOGIN_URL}
+              className="inline-flex w-full items-center justify-center gap-2 px-5 py-4 rounded-sm font-medium border border-navy text-navy"
+            >
+              <LogIn className="w-4 h-4" />
+              Acessar Sistema
+            </a>
             <a
               href={WHATSAPP_URL}
               target="_blank"

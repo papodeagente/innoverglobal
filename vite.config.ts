@@ -6,10 +6,15 @@
 // You can pass additional config via defineConfig({ vite: { ... } }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
-// Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
-// @cloudflare/vite-plugin builds from this — wrangler.jsonc main alone is insufficient.
+// SPA mode + prerender for SEO. Gera HTML estático para cada rota durante o build
+// permitindo deploy como site estático (nginx servindo dist/client) sem runtime SSR.
 export default defineConfig({
   tanstackStart: {
     server: { entry: "server" },
+    spa: { enabled: true },
+    prerender: {
+      enabled: true,
+      crawlLinks: true,
+    },
   },
 });
