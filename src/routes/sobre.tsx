@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { FadeIn } from "@/components/site/FadeIn";
 import { RouteLine } from "@/components/site/RouteLine";
-import { Seal } from "@/components/site/Seal";
 import gracePhoto from "@/assets/grace-moura.png";
 
 export const Route = createFileRoute("/sobre")({
@@ -46,26 +45,11 @@ function SobrePage() {
         </FadeIn>
 
         <FadeIn delay={150} className="lg:col-span-8">
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-10 lg:gap-20">
-            <div className="relative z-[2] space-y-5 text-ink/85 leading-[1.8] text-[17px]">
-              <p>A Innover Negócios Internacionais é uma consultoria especializada em Comércio Exterior, com mais de 12 anos de experiência na estruturação, operação e otimização de processos de importação e exportação. Atende empresas brasileiras de diferentes portes e segmentos, com atuação estratégica e operacional integrada.</p>
-              <p>Grace Kelly Lula de Moura, diretora de projetos e fundadora da Innover, atua como Despachante Aduaneiro autorizada pela Receita Federal do Brasil. Essa combinação rara, consultoria estratégica somada à execução aduaneira direta, permite oferecer ao cliente uma visão completa da cadeia internacional: do planejamento comercial e regulatório até a liberação aduaneira e entrega da mercadoria.</p>
-              <p>Nossa atuação é orientada à redução de riscos, conformidade regulatória, eficiência logística e viabilidade econômica das operações. Trabalhamos com linguagem clara, orientação prática e foco em tomada de decisão, sem jargão técnico vazio.</p>
-              <p>Atendemos empresas de todo o Brasil, com forte presença nos segmentos de alimentos e bebidas, equipamentos e produtos médicos, cosméticos, vestuário e moda, e bens de consumo diversos.</p>
-            </div>
-
-            {/* documento decorativo */}
-            <div className="relative z-[1] justify-self-center lg:justify-self-end w-full max-w-[320px] lg:max-w-none lg:w-[360px] lg:self-start lg:sticky lg:top-[120px] bg-white border border-line shadow-xl p-5 lg:stamp">
-              <div className="label-mono">CERTIFICADO DE ORIGEM</div>
-              <div className="mt-3 space-y-1 font-mono text-[10px] uppercase text-mute leading-relaxed">
-                <div>No. INV-2025-001</div>
-                <div>Origem: BRASIL</div>
-                <div>Destino: [VARIADO]</div>
-                <div>Emissor: INNOVER NEGÓCIOS INT.</div>
-              </div>
-              <div className="mt-4 h-px bg-line" />
-              <div className="mt-4 flex justify-end"><Seal className="scale-75 origin-bottom-right" withCertification /></div>
-            </div>
+          <div className="max-w-[720px] space-y-5 text-ink/85 leading-[1.8] text-[17px]">
+            <p>A Innover Negócios Internacionais é uma consultoria especializada em Comércio Exterior, com mais de 12 anos de experiência na estruturação, operação e otimização de processos de importação e exportação. Atende empresas brasileiras de diferentes portes e segmentos, com atuação estratégica e operacional integrada.</p>
+            <p>Grace Kelly Lula de Moura, diretora de projetos e fundadora da Innover, atua como Despachante Aduaneiro autorizada pela Receita Federal do Brasil. Essa combinação rara, consultoria estratégica somada à execução aduaneira direta, permite oferecer ao cliente uma visão completa da cadeia internacional: do planejamento comercial e regulatório até a liberação aduaneira e entrega da mercadoria.</p>
+            <p>Nossa atuação é orientada à redução de riscos, conformidade regulatória, eficiência logística e viabilidade econômica das operações. Trabalhamos com linguagem clara, orientação prática e foco em tomada de decisão, sem jargão técnico vazio.</p>
+            <p>Atendemos empresas de todo o Brasil, com forte presença nos segmentos de alimentos e bebidas, equipamentos e produtos médicos, cosméticos, vestuário e moda, e bens de consumo diversos.</p>
           </div>
         </FadeIn>
       </div>
@@ -78,7 +62,7 @@ function SobrePage() {
         </FadeIn>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10 md:mt-12">
           {[
-            { n: "01", title: "INTEGRAÇÃO", body: "Consultoria e despacho aduaneiro entregues pela mesma equipe." },
+            { n: "01", title: "CREDIBILIDADE", body: "Clientes satisfeitos nos recomendam no Brasil e no exterior. Clientes novos apostam e constatam." },
             { n: "02", title: "PREVENÇÃO", body: "Foco em mitigar riscos antes que virem custo." },
             { n: "03", title: "CLAREZA", body: "Tudo é explicado em português comum, não em sopa de letras." },
           ].map((v, i) => (

@@ -31,8 +31,7 @@ export function Footer() {
               </div>
             </div>
             <p className="mt-6 text-sm text-white/60 max-w-md leading-relaxed">
-              Consultoria especializada em comércio exterior para micro e pequenas empresas brasileiras.
-              Foco em alimentos e bebidas, importação e exportação.
+              Consultora em Negócios Internacionais. Especialista em regulatório americano. Despachante aduaneiro autorizado.
             </p>
 
             {/* mini route map */}

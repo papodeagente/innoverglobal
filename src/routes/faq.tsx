@@ -51,7 +51,7 @@ const FAQ = [
   { q: "Vocês trabalham com regimes aduaneiros especiais?",
     a: "Sim. Avaliamos a aplicabilidade de regimes como drawback, admissão temporária, entreposto aduaneiro, RECOF e outros conforme a operação. A escolha correta do regime pode reduzir significativamente o custo tributário da operação." },
   { q: "Como funciona a interface com meus fornecedores internacionais?",
-    a: "Cuidamos desde a negociação inicial dos Incoterms até a coordenação com agentes de carga, transportadores e seguradoras. Você não precisa ter equipe interna de comex para operar. A Innover atua como interface técnica entre sua empresa e o ecossistema internacional." },
+    a: "Conseguimos apoiar na comunicação estratégica com seu fornecedor, apoiando na coordenação com agentes de carga, transportadoras e seguradoras. A Innover atua como interface técnica entre sua empresa e o ecossistema internacional." },
   { q: "Quanto custa uma consultoria?",
     a: "Cada projeto tem escopo próprio e o valor é definido após uma conversa inicial gratuita, onde entendemos o objetivo, a complexidade da operação e o nível de envolvimento necessário. Não trabalhamos com pacote pronto justamente porque cada empresa tem uma realidade diferente." },
 ];
