@@ -14,15 +14,15 @@ const DICT: Dict = {
   "nav.cta": { pt: "Fale conosco", en: "Talk to us" },
 
   "hero.label": { pt: "CONSULTORIA COMEX · DESPACHANTE ADUANEIRO RFB · NATAL/RN", en: "FOREIGN TRADE CONSULTING · CUSTOMS BROKER RFB · NATAL/RN" },
-  "hero.title": { pt: "Comércio exterior, sem fricção.", en: "Foreign trade, without friction." },
+  "hero.title": { pt: "Sua empresa internacional.", en: "Your international company." },
   "hero.sub": {
-    pt: "Consultoria estratégica e operacional em importação, exportação e despacho aduaneiro. Atendimento integrado pra micro, pequenas e médias empresas brasileiras.",
-    en: "Strategic and operational consulting in import, export and customs clearance. Integrated service for Brazilian micro, small and mid-sized companies.",
+    pt: "Consultoria estratégica em acesso a mercados internacionais, seja na importação ou exportação. Atendimento integrado para micro, pequenas e médias empresas.",
+    en: "Strategic consulting for access to international markets, in import or export. Integrated service for micro, small and mid-sized companies.",
   },
   "hero.cta1": { pt: "Agendar conversa", en: "Schedule a call" },
   "hero.cta2": { pt: "Conhecer serviços", en: "Explore services" },
 
-  "stats.countries": { pt: "mercados internacionais atendidos", en: "international markets served" },
+  "stats.countries": { pt: "empresas registradas junto à FDA", en: "companies registered with the FDA" },
   "stats.years": { pt: "de atuação em comércio exterior", en: "in foreign trade" },
   "stats.smb": { pt: "foco em micro, pequenas e médias empresas", en: "focus on micro, small and mid-sized companies" },
   "stats.response": { pt: "despachante aduaneiro autorizada Receita Federal", en: "customs broker authorized by Brazil's Federal Revenue" },

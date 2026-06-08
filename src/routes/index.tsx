@@ -64,7 +64,7 @@ function HomePage() {
       {/* STATS */}
       <section className="border-y border-line bg-mist/60">
         <div className="max-w-[1280px] mx-auto px-5 sm:px-6 lg:px-10 py-12 md:py-14 grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-          <StatStatic value="12" suffix=" ANOS" label={t("stats.years")} />
+          <StatStatic value="14" suffix=" ANOS" label={t("stats.years")} />
           <StatStatic value="+ DE 50" label={t("stats.countries")} />
           <StatStatic value="MPME" label={t("stats.smb")} />
           <StatStatic value="RFB" label={t("stats.response")} />
@@ -79,7 +79,7 @@ function HomePage() {
         </FadeIn>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10 md:mt-14">
           {[
-            { icon: <ShieldCheck className="w-6 h-6" strokeWidth={1.4} />, title: "ATUAÇÃO INTEGRADA", body: "Consultoria estratégica e despacho aduaneiro sob o mesmo teto. Acompanhamos a operação do planejamento até a entrega final da mercadoria, sem terceirização de etapas críticas." },
+            { icon: <ShieldCheck className="w-6 h-6" strokeWidth={1.4} />, title: "COMPLIANCE FDA", body: "Te ajudamos em compliance regulatório FDA para alimentos, bebidas, suplementos e cosméticos." },
             { icon: <Wheat className="w-6 h-6" strokeWidth={1.4} />, title: "VISÃO COMPLETA DA CADEIA", body: "Domínio técnico do fluxo logístico, regulatório, fiscal e documental. Cada decisão é tomada com base na cadeia inteira, não em etapas isoladas." },
             { icon: <MessagesSquare className="w-6 h-6" strokeWidth={1.4} />, title: "FOCO EM MITIGAÇÃO DE RISCOS", body: "Atuação preventiva em conformidade regulatória, classificação fiscal e regimes aduaneiros. Reduzimos exposição a multas, autuações e prejuízos operacionais." },
           ].map((c, i) => (

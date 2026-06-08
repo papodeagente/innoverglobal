@@ -140,7 +140,7 @@ function ContatoPage() {
         <FadeIn delay={120} className="lg:col-span-5 order-1 lg:order-2">
           <div className="bg-navy text-white p-6 sm:p-8 lg:p-10">
             <div className="label-mono text-white/60">CONVERSA DIRETA</div>
-            <h3 className="font-display text-2xl mt-3">WhatsApp da Grace</h3>
+            <h3 className="font-display text-2xl mt-3">Fale com a Innover</h3>
             <a
               href={WHATSAPP_URL}
               target="_blank"
