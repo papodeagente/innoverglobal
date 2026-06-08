@@ -107,12 +107,10 @@ function HomePage() {
               </Link>
             </div>
           </FadeIn>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto">
             {[
               { code: "INV-001", name: "Exportação" },
               { code: "INV-002", name: "Importação" },
-              { code: "INV-003", name: "Certificação Sanitária" },
-              { code: "INV-004", name: "Pesquisa de Mercado" },
             ].map((s, i) => (
               <FadeIn key={s.code} delay={i * 60}>
                 <Link to="/servicos" className="block p-6 bg-white border border-line card-lift h-full">
