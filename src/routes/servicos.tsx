@@ -99,7 +99,7 @@ function ServicosPage() {
       </FadeIn>
       <RouteLine label="ROTA · DIAGNÓSTICO → OPERAÇÃO" />
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 sm:gap-6 mt-10 md:mt-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 mt-10 md:mt-12">
         {SERVICES.map((s, i) => (
           <FadeIn key={s.code} delay={i * 80}>
             <article className="border border-line bg-white p-6 sm:p-8 card-lift h-full flex flex-col group">
