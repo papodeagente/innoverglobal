@@ -17,7 +17,7 @@ const NAV = [
 // URL do sistema Innover OS. Sobrescreve via VITE_SYSTEM_URL no build se mudar o domínio.
 const SYSTEM_LOGIN_URL =
   (import.meta as { env?: { VITE_SYSTEM_URL?: string } }).env?.VITE_SYSTEM_URL ??
-  "https://app.innovernegocios.com.br/login";
+  "https://os.innovernegocios.com.br/login";
 
 export function Header() {
   const { t, lang, setLang } = useI18n();
