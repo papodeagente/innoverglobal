@@ -134,45 +134,76 @@ export function Globe({
         devicePixelRatio: dpr,
         width,
         height: width,
-        phi: 0,
-        theta,
+      phi: 0,
+      theta,
+      dark,
+      diffuse,
+      mapSamples,
+      mapBrightness,
+      baseColor,
+      markerColor,
+      glowColor,
+      markerElevation,
+      markers: markers.map((m) => ({
+        location: m.location,
+        size: markerSize,
+        id: m.id,
+      })),
+      arcs: arcs.map((a) => ({
+        from: a.from,
+        to: a.to,
+        id: a.id,
+      })),
+      arcColor,
+      arcWidth,
+      arcHeight,
+      opacity: 0.7,
+    })
+
+    function animate() {
+      if (!isPausedRef.current) {
+        phi += speed
+        if (
+          Math.abs(velocity.current.phi) > 0.0001 ||
+          Math.abs(velocity.current.theta) > 0.0001
+        ) {
+          phiOffsetRef.current += velocity.current.phi
+          thetaOffsetRef.current += velocity.current.theta
+          velocity.current.phi *= 0.95
+          velocity.current.theta *= 0.95
+        }
+        const thetaMin = -0.4,
+          thetaMax = 0.4
+        if (thetaOffsetRef.current < thetaMin) {
+          thetaOffsetRef.current += (thetaMin - thetaOffsetRef.current) * 0.1
+        } else if (thetaOffsetRef.current > thetaMax) {
+          thetaOffsetRef.current += (thetaMax - thetaOffsetRef.current) * 0.1
+        }
+      }
+      globe!.update({
+        phi: phi + phiOffsetRef.current + dragOffset.current.phi,
+        theta: theta + thetaOffsetRef.current + dragOffset.current.theta,
         dark,
-        diffuse,
-        mapSamples,
         mapBrightness,
-        baseColor,
         markerColor,
-        glowColor,
+        baseColor,
+        arcColor,
+        markerElevation,
         markers: markers.map((m) => ({
           location: m.location,
           size: markerSize,
+          id: m.id,
         })),
-        opacity: 0.95,
-        onRender: (state) => {
-          if (!isPausedRef.current) {
-            phi += speed
-            if (
-              Math.abs(velocity.current.phi) > 0.0001 ||
-              Math.abs(velocity.current.theta) > 0.0001
-            ) {
-              phiOffsetRef.current += velocity.current.phi
-              thetaOffsetRef.current += velocity.current.theta
-              velocity.current.phi *= 0.95
-              velocity.current.theta *= 0.95
-            }
-            const thetaMin = -0.4, thetaMax = 0.4
-            if (thetaOffsetRef.current < thetaMin) {
-              thetaOffsetRef.current += (thetaMin - thetaOffsetRef.current) * 0.1
-            } else if (thetaOffsetRef.current > thetaMax) {
-              thetaOffsetRef.current += (thetaMax - thetaOffsetRef.current) * 0.1
-            }
-          }
-          state.phi = phi + phiOffsetRef.current + dragOffset.current.phi
-          state.theta = theta + thetaOffsetRef.current + dragOffset.current.theta
-        },
+        arcs: arcs.map((a) => ({
+          from: a.from,
+          to: a.to,
+          id: a.id,
+        })),
       })
-
-      setTimeout(() => { if (canvas) canvas.style.opacity = "1" })
+      animationId = requestAnimationFrame(animate)
+    }
+      animate()
+      setTimeout(() => canvas && (canvas.style.opacity = "1"))
     }
 
     if (canvas.offsetWidth > 0) {
@@ -191,8 +222,7 @@ export function Globe({
       if (animationId) cancelAnimationFrame(animationId)
       if (globe) globe.destroy()
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [JSON.stringify(markers), JSON.stringify(arcs), markerColor.join(','), baseColor.join(','), arcColor.join(','), glowColor.join(','), dark, mapBrightness, markerSize, markerElevation, arcWidth, arcHeight, speed, theta, diffuse, mapSamples])
+  }, [markers, arcs, markerColor, baseColor, arcColor, glowColor, dark, mapBrightness, markerSize, markerElevation, arcWidth, arcHeight, speed, theta, diffuse, mapSamples])
 
   return (
     <div className={`relative aspect-square select-none ${className}`}>
@@ -209,6 +239,85 @@ export function Globe({
           touchAction: "none",
         }}
       />
+      {markers.map((m) => (
+        <div
+          key={m.id}
+          style={{
+            position: "absolute",
+            // @ts-expect-error CSS Anchor Positioning
+            positionAnchor: `--cobe-${m.id}`,
+            bottom: "anchor(top)",
+            left: "anchor(center)",
+            translate: "-50% 0",
+            marginBottom: 8,
+            padding: "2px 6px",
+            background: "#1a1a2e",
+            color: "#fff",
+            fontFamily: "monospace",
+            fontSize: "0.6rem",
+            letterSpacing: "0.08em",
+            textTransform: "uppercase" as const,
+            whiteSpace: "nowrap" as const,
+            pointerEvents: "none" as const,
+            opacity: `var(--cobe-visible-${m.id}, 0)`,
+            filter: `blur(calc((1 - var(--cobe-visible-${m.id}, 0)) * 8px))`,
+            transition: "opacity 0.8s, filter 0.8s",
+          }}
+        >
+          {m.label}
+          <span
+            style={{
+              position: "absolute",
+              top: "100%",
+              left: "50%",
+              transform: "translate3d(-50%, -1px, 0)",
+              border: "5px solid transparent",
+              borderTopColor: "#1a1a2e",
+            }}
+          />
+        </div>
+      ))}
+      {arcs
+        .filter((a) => a.label)
+        .map((a) => (
+          <div
+            key={a.id}
+            style={{
+              position: "absolute",
+              // @ts-expect-error CSS Anchor Positioning
+              positionAnchor: `--cobe-arc-${a.id}`,
+              bottom: "anchor(top)",
+              left: "anchor(center)",
+              translate: "-50% 0",
+              marginBottom: 8,
+              padding: "2px 6px",
+              background: "#fff",
+              color: "#1a1a2e",
+              fontFamily: "monospace",
+              fontSize: "0.6rem",
+              letterSpacing: "0.08em",
+              textTransform: "uppercase" as const,
+              whiteSpace: "nowrap" as const,
+              pointerEvents: "none" as const,
+              boxShadow: "0 1px 4px rgba(0,0,0,0.1)",
+              opacity: `var(--cobe-visible-arc-${a.id}, 0)`,
+              filter: `blur(calc((1 - var(--cobe-visible-arc-${a.id}, 0)) * 8px))`,
+              transition: "opacity 0.8s, filter 0.8s",
+            }}
+          >
+            {a.label}
+            <span
+              style={{
+                position: "absolute",
+                top: "100%",
+                left: "50%",
+                transform: "translate3d(-50%, -1px, 0)",
+                border: "5px solid transparent",
+                borderTopColor: "#fff",
+              }}
+            />
+          </div>
+        ))}
     </div>
   )
 }
