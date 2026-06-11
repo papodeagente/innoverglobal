@@ -27,8 +27,13 @@ export function HeroGlobe({ className }: { className?: string }) {
       // Paleta alinhada ao tema do site (fundo claro)
       oceanFill="#ffffff"      // esfera branca
       outlineColor="#0A2540"   // navy (contornos e grade)
-      graticuleAlpha={0.18}    // grade discreta
+      graticuleAlpha={0.32}    // grade mais presente
       dotColor="#1E5BFF"       // primary (halftone dots)
+      // Ajustes para reforçar a presença visual do globo
+      dotSize={1.5}            // dots maiores (era 1.2)
+      dotSpacing={13}          // menos espaço entre dots = mais denso (era 16)
+      outlineWidth={1.2}       // contornos de terra mais fortes
+      sphereOutlineWidth={1.8} // contorno da esfera mais marcado
       hint={false}
     />
   )

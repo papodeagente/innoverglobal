@@ -11,6 +11,10 @@ interface RotatingEarthProps {
   outlineColor?: string      // contorno da esfera, terras e grade
   graticuleAlpha?: number    // opacidade da grade (graticule)
   dotColor?: string          // cor dos halftone dots (terras)
+  dotSize?: number           // raio base dos halftone dots
+  dotSpacing?: number        // espacamento entre dots (menor = mais denso)
+  outlineWidth?: number      // espessura base dos contornos de terra
+  sphereOutlineWidth?: number // espessura do contorno da esfera
   hint?: boolean             // mostra "Drag to rotate"
   hintColor?: string
 }
@@ -23,6 +27,10 @@ export default function RotatingEarth({
   outlineColor = "#0A2540",
   graticuleAlpha = 0.18,
   dotColor = "#1E5BFF",
+  dotSize = 1.2,
+  dotSpacing = 16,
+  outlineWidth = 0.9,
+  sphereOutlineWidth = 1.5,
   hint = false,
   hintColor = "#0A2540",
 }: RotatingEarthProps) {
@@ -118,7 +126,7 @@ export default function RotatingEarth({
         return false
       }
 
-      const generateDotsInPolygon = (feature: any, dotSpacing = 16) => {
+      const generateDotsInPolygon = (feature: any) => {
         const dots: [number, number][] = []
         const bounds = d3.geoBounds(feature)
         const [[minLng, minLat], [maxLng, maxLat]] = bounds
@@ -149,7 +157,7 @@ export default function RotatingEarth({
         context.fillStyle = oceanFill
         context.fill()
         context.strokeStyle = outlineColor
-        context.lineWidth = 1.5 * scaleFactor
+        context.lineWidth = sphereOutlineWidth * scaleFactor
         context.stroke()
 
         if (landFeatures) {
@@ -167,7 +175,7 @@ export default function RotatingEarth({
           context.beginPath()
           landFeatures.features.forEach((feature: any) => path(feature))
           context.strokeStyle = outlineColor
-          context.lineWidth = 0.9 * scaleFactor
+          context.lineWidth = outlineWidth * scaleFactor
           context.stroke()
 
           // Halftone dots
@@ -181,7 +189,7 @@ export default function RotatingEarth({
               projected[1] <= containerHeight
             ) {
               context.beginPath()
-              context.arc(projected[0], projected[1], 1.2 * scaleFactor, 0, 2 * Math.PI)
+              context.arc(projected[0], projected[1], dotSize * scaleFactor, 0, 2 * Math.PI)
               context.fillStyle = dotColor
               context.fill()
             }
@@ -197,7 +205,7 @@ export default function RotatingEarth({
         if (stopped) return
 
         landFeatures.features.forEach((feature: any) => {
-          const dots = generateDotsInPolygon(feature, 16)
+          const dots = generateDotsInPolygon(feature)
           dots.forEach(([lng, lat]) => allDots.push({ lng, lat }))
         })
 
@@ -288,7 +296,7 @@ export default function RotatingEarth({
       stopped = true
       cleanupFns.forEach((fn) => fn())
     }
-  }, [size.w, size.h, oceanFill, outlineColor, graticuleAlpha, dotColor])
+  }, [size.w, size.h, oceanFill, outlineColor, graticuleAlpha, dotColor, dotSize, dotSpacing, outlineWidth, sphereOutlineWidth])
 
   if (error) {
     return (
