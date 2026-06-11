@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useI18n, WHATSAPP_URL } from "@/lib/i18n";
-import { RouteNetwork } from "@/components/site/RouteNetwork";
+import { HeroGlobe } from "@/components/site/HeroGlobe";
 import { Seal } from "@/components/site/Seal";
 import { FadeIn } from "@/components/site/FadeIn";
 
@@ -53,7 +53,11 @@ function HomePage() {
             </FadeIn>
           </div>
           <FadeIn delay={200} className="relative">
-            <RouteNetwork className="w-full h-auto max-h-[280px] sm:max-h-[420px] lg:max-h-none" />
+            {/* Globo 3D interativo (WebGL) — substitui o antigo RouteNetwork (SVG).
+                Mantém o mesmo container, tamanhos e alinhamento do hero. */}
+            <div className="w-full mx-auto max-w-[280px] sm:max-w-[420px] lg:max-w-none">
+              <HeroGlobe className="w-full" />
+            </div>
             <div className="absolute -bottom-2 right-0 hidden sm:block">
               <Seal withCertification />
             </div>
